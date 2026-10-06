@@ -1,0 +1,28 @@
+[package]
+name = "gpui-bench"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "MIT OR Apache-2.0"
+description = "GPUI side of the AMAGE Eco vs GPUI benchmark"
+
+[dependencies]
+# Same GPUI revision and platform features as Farol (farol-next/Cargo.toml).
+gpui = { git = "https://github.com/zeronsh/zui", rev = "c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add" }
+gpui_platform = { git = "https://github.com/zeronsh/zui", rev = "c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add", features = [
+    "wayland",
+    "x11",
+    "font-kit",
+    "runtime_shaders",
+] }
+# Versions as resolved in Farol's lockfile (copied here).
+anyhow = "1"
+futures = "0.3"
+image = { version = "0.25", default-features = false, features = ["png"] }
+libc = "0.2"
+smallvec = "1"
+
+[profile.release]
+# Farol's release profile without its `strip = "symbols"`: the benchmark
+# reports the binary size both unstripped and stripped (by `strip`).
+lto = false

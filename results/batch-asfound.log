@@ -1,0 +1,58 @@
+eco-demo-x11-asfound #1: discarded (startup 799 ms; idle 0 frames 22.2 ms cpu main-wakeups 0 all 1140; update down 18.92 up nan ms, cpu/upd 32.44 (net 32.10) missed 48 extra 14; resize median 174.9 ms; rss 141/141 MiB; FOREIGN INPUT x347) -> discarded-1-191349
+Traceback (most recent call last):
+  File "<eco>/bench/tools/batch.py", line 124, in <module>
+    main()
+    ~~~~^^
+  File "<eco>/bench/tools/batch.py", line 106, in main
+    r = run_session(config, rundir)
+  File "<eco>/bench/tools/batch.py", line 66, in run_session
+    return subprocess.run(cmd, capture_output=True, text=True)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 557, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2153, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+eco-demo-x11-asfound #1: startup 727 ms; idle 0 frames 19.8 ms cpu main-wakeups 0 all 1147; update down 23.01 up nan ms, cpu/upd 88.06 (net 87.76) missed 30 extra 29; resize median 178.4 ms; rss 96/96 MiB
+eco-demo-x11-asfound #2: startup 734 ms; idle 0 frames 24.0 ms cpu main-wakeups 0 all 1145; update down 19.23 up nan ms, cpu/upd 85.94 (net 85.58) missed 30 extra 29; resize median 177.9 ms; rss 95/96 MiB
+Traceback (most recent call last):
+  File "<eco>/bench/tools/batch.py", line 132, in <module>
+    main()
+    ~~~~^^
+  File "<eco>/bench/tools/batch.py", line 114, in main
+    r = run_session(config, rundir)
+  File "<eco>/bench/tools/batch.py", line 69, in run_session
+    out, err = p.communicate()
+               ~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2153, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+eco-demo-x11-asfound #1: discarded (startup 716 ms; idle 2 frames 74.3 ms cpu main-wakeups 1278 all 2448; update down 2.03 up 167.82 ms, cpu/upd 86.45 (net 84.13) missed 0 extra 0; resize median 175.6 ms; rss 96/96 MiB; FOREIGN INPUT x708) -> discarded-1-191829
+eco-demo-x11-asfound #1: startup 731 ms; idle 0 frames 24.5 ms cpu main-wakeups 0 all 1141; update down 2.04 up 168.59 ms, cpu/upd 86.93 (net 86.17) missed 0 extra 0; resize median 172.9 ms; rss 95/96 MiB
+eco-demo-x11-asfound #2: startup 738 ms; idle 0 frames 23.9 ms cpu main-wakeups 0 all 1141; update down 1.96 up 167.90 ms, cpu/upd 86.55 (net 85.80) missed 0 extra 0; resize median 175.6 ms; rss 96/96 MiB
+eco-demo-x11-asfound #3: startup 720 ms; idle 0 frames 22.0 ms cpu main-wakeups 0 all 1143; update down 1.96 up 168.76 ms, cpu/upd 87.78 (net 87.10) missed 0 extra 0; resize median 173.8 ms; rss 96/96 MiB
+eco-grid200-x11-asfound #1: discarded (startup 848 ms; idle 0 frames 88.1 ms cpu main-wakeups 1831 all 2979; update down 1.91 up 9.82 ms, cpu/upd 7.26 (net 4.52) missed 0 extra 0; rss 137/137 MiB; FOREIGN INPUT x936) -> discarded-1-192140
+eco-grid200-x11-asfound #1: discarded (startup 881 ms; idle 0 frames 24.4 ms cpu main-wakeups 0 all 1151; update down 2.09 up 10.82 ms, cpu/upd 7.21 (net 6.45) missed 13 extra 1; rss 91/91 MiB; FOREIGN INPUT x779) -> discarded-1-192225
+eco-grid200-x11-asfound #1: startup 832 ms; idle 0 frames 23.3 ms cpu main-wakeups 0 all 1140; update down 1.92 up 9.85 ms, cpu/upd 7.31 (net 6.59) missed 0 extra 0; rss 99/99 MiB
+eco-grid200-x11-asfound #2: startup 811 ms; idle 0 frames 24.7 ms cpu main-wakeups 0 all 1141; update down 1.94 up 10.01 ms, cpu/upd 7.41 (net 6.64) missed 0 extra 0; rss 99/99 MiB
+eco-grid200-x11-asfound #3: startup 806 ms; idle 0 frames 24.3 ms cpu main-wakeups 0 all 1140; update down 1.99 up 9.98 ms, cpu/upd 7.26 (net 6.50) missed 0 extra 0; rss 95/95 MiB
+eco-grid1000-x11-asfound #1: discarded (startup 2873 ms; idle 0 frames 24.6 ms cpu main-wakeups 27 all 1168; update down 6.73 up 14.58 ms, cpu/upd 12.25 (net 11.48) missed 0 extra 3; rss 101/101 MiB; FOREIGN INPUT x239) -> discarded-1-192544
+eco-grid1000-x11-asfound #1: startup 2771 ms; idle 0 frames 23.8 ms cpu main-wakeups 0 all 1143; update down 6.81 up 14.80 ms, cpu/upd 11.91 (net 11.17) missed 0 extra 0; rss 100/101 MiB
+eco-grid1000-x11-asfound #2: startup 2784 ms; idle 0 frames 25.4 ms cpu main-wakeups 0 all 1143; update down 6.96 up 15.01 ms, cpu/upd 12.10 (net 11.31) missed 0 extra 0; rss 101/101 MiB
+eco-grid1000-x11-asfound #3: discarded (startup 2838 ms; idle 0 frames 23.3 ms cpu main-wakeups 0 all 1144; update down 6.83 up 14.90 ms, cpu/upd 11.45 (net 10.73) missed 5 extra 1; rss 94/95 MiB; FOREIGN INPUT x345) -> discarded-3-192813
+eco-grid1000-x11-asfound #3: startup 2806 ms; idle 0 frames 25.0 ms cpu main-wakeups 0 all 1142; update down 6.76 up 14.91 ms, cpu/upd 12.02 (net 11.24) missed 0 extra 0; rss 101/101 MiB
+eco-grid5000-x11-asfound #1: discarded (startup 12808 ms; idle 0 frames 50.2 ms cpu main-wakeups 483 all 1629; update down 32.74 up 41.40 ms, cpu/upd 36.64 (net 35.08) missed 0 extra 0; rss 112/115 MiB; FOREIGN INPUT x467) -> discarded-1-193025
+eco-grid5000-x11-asfound #1: startup 12941 ms; idle 0 frames 22.8 ms cpu main-wakeups 0 all 1146; update down 33.17 up 41.98 ms, cpu/upd 37.24 (net 36.53) missed 0 extra 0; rss 112/115 MiB
+eco-grid5000-x11-asfound #2: startup 13160 ms; idle 0 frames 23.4 ms cpu main-wakeups 0 all 1145; update down 33.20 up 41.24 ms, cpu/upd 37.21 (net 36.48) missed 0 extra 0; rss 117/120 MiB
+eco-grid5000-x11-asfound #3: startup 12602 ms; idle 0 frames 22.5 ms cpu main-wakeups 0 all 1142; update down 33.15 up 41.40 ms, cpu/upd 37.04 (net 36.33) missed 0 extra 0; rss 117/120 MiB

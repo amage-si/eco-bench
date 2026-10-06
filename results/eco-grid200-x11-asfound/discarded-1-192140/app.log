@@ -1,0 +1,1584 @@
+launch_mono_ns 73616757425223
+assets ready in 542 ms: font, 200 labels, 28 glyphs
+GPU 0: NVIDIA GeForce RTX 3050 Laptop GPU (discrete, vendor 4318, device 9698, Vulkan 1.4.341, 4096 MiB device-local, max image 32768)
+queue family 0, swapchain 900x560, format 44, 4 images, 2 frames in flight, validation layer off (not installed)
+window and GPU ready in 303 ms
+redraw 1 at 847 ms: scene + GPU 2 ms, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: mapped expose
+redraw 2 at 848 ms: scene + GPU 1 ms, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: moved
+input: focus-in
+input: enter move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: key-down 65591
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: leave moved
+input: enter move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: key-up 65591
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: focus-out
+input: leave
+input: focus-in
+input: key-down 9
+redraw 3 at 13205 ms: scene + GPU 2 ms, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: key-up 9
+input: key-down 32
+redraw 4 at 13886 ms: scene + GPU 1 ms, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 5 at 14194 ms: scene + GPU 1 ms, 29 glyphs cached, atlas 28 entries, 1966 texels uploaded
+input: key-down 32
+redraw 6 at 14486 ms: scene + GPU 1 ms, 29 glyphs cached, atlas 28 entries, 1966 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 7 at 14796 ms: scene + GPU 3 ms, 30 glyphs cached, atlas 29 entries, 2074 texels uploaded
+input: key-down 32
+redraw 8 at 15087 ms: scene + GPU 2 ms, 30 glyphs cached, atlas 29 entries, 2074 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 9 at 15397 ms: scene + GPU 3 ms, 31 glyphs cached, atlas 30 entries, 2191 texels uploaded
+input: key-down 32
+redraw 10 at 15687 ms: scene + GPU 1 ms, 31 glyphs cached, atlas 30 entries, 2191 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 11 at 15997 ms: scene + GPU 4 ms, 32 glyphs cached, atlas 31 entries, 2299 texels uploaded
+input: key-down 32
+redraw 12 at 16288 ms: scene + GPU 2 ms, 32 glyphs cached, atlas 31 entries, 2299 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 13 at 16600 ms: scene + GPU 6 ms, 33 glyphs cached, atlas 32 entries, 2416 texels uploaded
+input: key-down 32
+redraw 14 at 16888 ms: scene + GPU 2 ms, 33 glyphs cached, atlas 32 entries, 2416 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 15 at 17196 ms: scene + GPU 2 ms, 34 glyphs cached, atlas 33 entries, 2533 texels uploaded
+input: key-down 32
+redraw 16 at 17488 ms: scene + GPU 1 ms, 34 glyphs cached, atlas 33 entries, 2533 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 17 at 17797 ms: scene + GPU 3 ms, 35 glyphs cached, atlas 34 entries, 2641 texels uploaded
+input: key-down 32
+redraw 18 at 18088 ms: scene + GPU 1 ms, 35 glyphs cached, atlas 34 entries, 2641 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 19 at 18397 ms: scene + GPU 2 ms, 36 glyphs cached, atlas 35 entries, 2758 texels uploaded
+input: key-down 32
+redraw 20 at 18689 ms: scene + GPU 2 ms, 36 glyphs cached, atlas 35 entries, 2758 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 21 at 18997 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 22 at 19289 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 23 at 19597 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 24 at 19889 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 25 at 20197 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 26 at 20490 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 27 at 20798 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 28 at 21090 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 29 at 21399 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 30 at 21691 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 31 at 21999 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 32 at 22291 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 33 at 22599 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 34 at 22891 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 35 at 23199 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 36 at 23491 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 37 at 23799 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 38 at 24092 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 39 at 24400 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 40 at 24692 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 41 at 25000 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 42 at 25292 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 43 at 25600 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 44 at 25893 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 45 at 26201 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 46 at 26493 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 47 at 26801 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 48 at 27094 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 49 at 27403 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 50 at 27694 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 51 at 28002 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 52 at 28295 ms: scene + GPU 3 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 53 at 28603 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 54 at 28894 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 55 at 29202 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 56 at 29495 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 57 at 29803 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 58 at 30095 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 59 at 30403 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 60 at 30695 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 61 at 31003 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 62 at 31296 ms: scene + GPU 2 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 63 at 31603 ms: scene + GPU 1 ms, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: close
+frames presented: 63, redraws: 63, clicks: 30
+teardown: 0 native objects left; driver messages: 0 warnings, 0 errors
+window objects left: 0
+exit=0

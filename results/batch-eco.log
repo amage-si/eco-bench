@@ -1,0 +1,14 @@
+eco-demo-x11 #1: startup 524 ms; idle 0 frames 27.5 ms cpu main-wakeups 0 all 1144; update down 1.95 up 7.23 ms, cpu/upd 6.42 (net 5.56) missed 0 extra 0; resize median 18.4 ms; rss 104/104 MiB
+eco-demo-x11 #2: discarded (startup 537 ms; idle 0 frames 21.2 ms cpu main-wakeups 0 all 1144; update down 2.02 up 7.13 ms, cpu/upd 5.95 (net 5.29) missed 0 extra 0; resize median 12.4 ms; rss 104/104 MiB; FOREIGN INPUT x120) -> discarded-2-195311
+eco-demo-x11 #2: startup 531 ms; idle 0 frames 22.5 ms cpu main-wakeups 0 all 1146; update down 2.02 up 7.57 ms, cpu/upd 6.16 (net 5.46) missed 0 extra 0; resize median 14.6 ms; rss 104/104 MiB
+eco-demo-x11 #3: startup 532 ms; idle 0 frames 20.6 ms cpu main-wakeups 0 all 1145; update down 1.84 up 7.38 ms, cpu/upd 6.15 (net 5.51) missed 0 extra 0; resize median 13.4 ms; rss 104/104 MiB
+eco-grid200-x11 #1: startup 317 ms; idle 0 frames 22.1 ms cpu main-wakeups 0 all 1142; update down 1.89 up 2.28 ms, cpu/upd 3.39 (net 2.70) missed 0 extra 0; rss 99/99 MiB
+eco-grid200-x11 #2: discarded (startup 321 ms; idle 0 frames 19.5 ms cpu main-wakeups 0 all 1150; update down 1.88 up 2.18 ms, cpu/upd 3.36 (net 2.75) missed 0 extra 0; rss 99/99 MiB; FOREIGN INPUT x31) -> discarded-2-195626
+eco-grid200-x11 #2: startup 320 ms; idle 0 frames 19.9 ms cpu main-wakeups 0 all 1145; update down 1.89 up 2.13 ms, cpu/upd 3.25 (net 2.63) missed 0 extra 0; rss 99/99 MiB
+eco-grid200-x11 #3: startup 319 ms; idle 0 frames 22.7 ms cpu main-wakeups 0 all 1145; update down 1.98 up 2.27 ms, cpu/upd 3.46 (net 2.75) missed 0 extra 0; rss 91/91 MiB
+eco-grid1000-x11 #1: startup 322 ms; idle 0 frames 18.5 ms cpu main-wakeups 0 all 1143; update down 7.01 up 7.49 ms, cpu/upd 8.44 (net 7.86) missed 0 extra 0; rss 101/101 MiB
+eco-grid1000-x11 #2: startup 378 ms; idle 0 frames 19.9 ms cpu main-wakeups 0 all 1143; update down 6.70 up 6.90 ms, cpu/upd 7.83 (net 7.21) missed 0 extra 0; rss 101/101 MiB
+eco-grid1000-x11 #3: startup 338 ms; idle 0 frames 20.4 ms cpu main-wakeups 0 all 1142; update down 6.78 up 7.07 ms, cpu/upd 8.18 (net 7.55) missed 0 extra 0; rss 101/101 MiB
+eco-grid5000-x11 #1: startup 541 ms; idle 0 frames 20.0 ms cpu main-wakeups 0 all 1148; update down 32.90 up 32.92 ms, cpu/upd 32.50 (net 31.88) missed 0 extra 0; rss 117/120 MiB
+eco-grid5000-x11 #2: startup 474 ms; idle 0 frames 20.3 ms cpu main-wakeups 0 all 1144; update down 32.61 up 32.94 ms, cpu/upd 32.55 (net 31.92) missed 0 extra 0; rss 117/119 MiB
+eco-grid5000-x11 #3: startup 470 ms; idle 0 frames 21.0 ms cpu main-wakeups 0 all 1143; update down 32.72 up 32.71 ms, cpu/upd 32.49 (net 31.83) missed 0 extra 0; rss 117/120 MiB

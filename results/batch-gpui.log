@@ -1,0 +1,20 @@
+gpui-demo-x11 #1: startup 424 ms; idle 0 frames 63.3 ms cpu main-wakeups 1205 all 2348; update down 7.57 up 7.77 ms, cpu/upd 3.77 (net 1.80) missed 0 extra 0; resize median 11.4 ms; rss 143/143 MiB
+gpui-demo-x11 #2: startup 433 ms; idle 0 frames 67.2 ms cpu main-wakeups 1211 all 2355; update down 1.51 up 1.51 ms, cpu/upd 3.81 (net 1.71) missed 0 extra 0; resize median 11.8 ms; rss 143/144 MiB
+gpui-demo-x11 #3: startup 441 ms; idle 0 frames 65.8 ms cpu main-wakeups 1214 all 2356; update down 6.81 up 6.89 ms, cpu/upd 3.93 (net 1.88) missed 0 extra 0; resize median 10.2 ms; rss 143/143 MiB
+Traceback (most recent call last):
+  File "<eco>/bench/tools/batch.py", line 134, in <module>
+    main()
+    ~~~~^^
+  File "<eco>/bench/tools/batch.py", line 116, in main
+    r = run_session(config, rundir)
+  File "<eco>/bench/tools/batch.py", line 71, in run_session
+    out, err = p.communicate()
+               ~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2153, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

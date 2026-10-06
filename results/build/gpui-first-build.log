@@ -1,0 +1,43 @@
+# first GPUI build (warms deps; fetch + compile), 2026-10-06T18:29:54-03:00
+   Compiling pollster v0.4.0
+   Compiling lazy_static v1.5.0
+   Compiling float-ord v0.3.2
+   Compiling cosmic-text v0.19.0
+   Compiling xim-ctext v0.3.0 (https://github.com/zed-industries/xim-rs.git?rev=16f35a2c881b815a2b6cdfd6687988e84f8447d8#16f35a2c)
+   Compiling is-wsl v0.4.0
+   Compiling accesskit_atspi_common v0.18.1
+   Compiling atspi v0.29.0
+   Compiling num v0.4.3
+   Compiling aes v0.8.4
+   Compiling sha2 v0.10.9
+   Compiling hkdf v0.12.4
+   Compiling pbkdf2 v0.12.2
+   Compiling cbc v0.1.2
+   Compiling ashpd v0.13.13
+   Compiling md-5 v0.10.6
+   Compiling calloop v0.14.4
+   Compiling async-net v2.0.0
+   Compiling xkeysym v0.2.1
+   Compiling hashbrown v0.14.5
+   Compiling xkbcommon v0.8.0
+   Compiling oo7 v0.6.0
+   Compiling calloop-wayland-source v0.4.1
+   Compiling smol v2.0.2
+   Compiling zed-xim v0.4.0-zed (https://github.com/zed-industries/xim-rs.git?rev=16f35a2c881b815a2b6cdfd6687988e84f8447d8#16f35a2c)
+   Compiling gpui_wgpu v0.1.0 (https://github.com/zeronsh/zui?rev=c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add#c2d273dc)
+   Compiling accesskit_unix v0.21.1
+   Compiling open v5.4.1
+   Compiling x11-clipboard v0.9.3
+   Compiling wayland-cursor v0.31.14
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling wayland-protocols-plasma v0.3.12
+   Compiling filedescriptor v0.8.3
+   Compiling notify-rust v4.18.0
+   Compiling gpui_linux v0.1.0 (https://github.com/zeronsh/zui?rev=c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add#c2d273dc)
+   Compiling gpui_platform v0.1.0 (https://github.com/zeronsh/zui?rev=c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add#c2d273dc)
+   Compiling gpui-bench v0.1.0 (<eco>/bench/gpui)
+    Finished `release` profile [optimized] target(s) in 2m 38s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+real 158.061 s, user 880.311 s, sys 46.643 s
+exit=0

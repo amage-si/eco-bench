@@ -1,0 +1,273 @@
+launch_mono_ns 75500903461183
+assets ready in 262 ms: font, PNG (Ocula), SVG (Splina + Dithra), text, layout
+GPU 0: NVIDIA GeForce RTX 3050 Laptop GPU (discrete, vendor 4318, device 9698, Vulkan 1.4.341, 4096 MiB device-local, max image 32768)
+queue family 0, swapchain 900x560, format 44, 4 images, 2 frames in flight, validation layer off (not installed)
+window and GPU ready in 268 ms
+redraw 1 at 535 ms: scene + GPU 5 ms, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: mapped expose
+redraw 2 at 536 ms: scene + GPU 1 ms, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: moved
+input: focus-in
+input: key-down 9
+redraw 3 at 12872 ms: scene + GPU 2 ms, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: key-up 9
+input: key-down 32
+redraw 4 at 13553 ms: scene + GPU 2 ms, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 5 at 13859 ms: scene + GPU 3 ms, 95 glyphs cached, atlas 93 entries, 84299 texels uploaded
+input: key-down 32
+redraw 6 at 14153 ms: scene + GPU 2 ms, 95 glyphs cached, atlas 93 entries, 84299 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 7 at 14459 ms: scene + GPU 3 ms, 96 glyphs cached, atlas 94 entries, 84407 texels uploaded
+input: key-down 32
+redraw 8 at 14753 ms: scene + GPU 1 ms, 96 glyphs cached, atlas 94 entries, 84407 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 9 at 15059 ms: scene + GPU 2 ms, 97 glyphs cached, atlas 95 entries, 84524 texels uploaded
+input: key-down 32
+redraw 10 at 15354 ms: scene + GPU 2 ms, 97 glyphs cached, atlas 95 entries, 84524 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 11 at 15659 ms: scene + GPU 2 ms, 98 glyphs cached, atlas 96 entries, 84632 texels uploaded
+input: key-down 32
+redraw 12 at 15954 ms: scene + GPU 2 ms, 98 glyphs cached, atlas 96 entries, 84632 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 13 at 16261 ms: scene + GPU 4 ms, 99 glyphs cached, atlas 97 entries, 84749 texels uploaded
+input: key-down 32
+redraw 14 at 16554 ms: scene + GPU 1 ms, 99 glyphs cached, atlas 97 entries, 84749 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 15 at 16860 ms: scene + GPU 2 ms, 100 glyphs cached, atlas 98 entries, 84866 texels uploaded
+input: key-down 32
+redraw 16 at 17155 ms: scene + GPU 2 ms, 100 glyphs cached, atlas 98 entries, 84866 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 17 at 17463 ms: scene + GPU 5 ms, 101 glyphs cached, atlas 99 entries, 84974 texels uploaded
+input: key-down 32
+redraw 18 at 17755 ms: scene + GPU 2 ms, 101 glyphs cached, atlas 99 entries, 84974 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 19 at 18063 ms: scene + GPU 4 ms, 102 glyphs cached, atlas 100 entries, 85091 texels uploaded
+input: key-down 32
+redraw 20 at 18355 ms: scene + GPU 2 ms, 102 glyphs cached, atlas 100 entries, 85091 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 21 at 18663 ms: scene + GPU 4 ms, 103 glyphs cached, atlas 101 entries, 85208 texels uploaded
+input: key-down 32
+redraw 22 at 18955 ms: scene + GPU 1 ms, 103 glyphs cached, atlas 101 entries, 85208 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 23 at 19264 ms: scene + GPU 5 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 24 at 19556 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 25 at 19861 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 26 at 20156 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 27 at 20461 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 28 at 20756 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 29 at 21062 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 30 at 21357 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 31 at 21662 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 32 at 21957 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 33 at 22262 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 34 at 22557 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 35 at 22862 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 36 at 23158 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 37 at 23463 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 38 at 23758 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 39 at 24063 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 40 at 24358 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 41 at 24663 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 42 at 24958 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 43 at 25263 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 44 at 25559 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 45 at 25864 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 46 at 26159 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 47 at 26464 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 48 at 26759 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 49 at 27064 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 50 at 27360 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 51 at 27665 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 52 at 27960 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 53 at 28265 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 54 at 28560 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 55 at 28866 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 56 at 29161 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 57 at 29466 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 58 at 29761 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 59 at 30066 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 60 at 30361 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 61 at 30667 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-down 32
+redraw 62 at 30962 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 63 at 31267 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: resize 1100x700 moved
+redraw 64 at 32286 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: expose enter move
+redraw 65 at 32288 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: focus-out
+redraw 66 at 32335 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: leave
+input: focus-in
+input: enter move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: focus-out
+input: leave
+input: resize 640x760 expose moved
+redraw 67 at 33785 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: resize 1280x480 moved
+redraw 68 at 35292 ms: scene + GPU 1 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: expose
+redraw 69 at 35294 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: resize 760x560 expose moved
+redraw 70 at 36801 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: resize 900x560 expose moved
+redraw 71 at 38309 ms: scene + GPU 2 ms, 104 glyphs cached, atlas 102 entries, 85325 texels uploaded
+input: close
+frames presented: 71, redraws: 71, clicks: 30
+teardown: 0 native objects left; driver messages: 0 warnings, 0 errors
+window objects left: 0
+exit=0

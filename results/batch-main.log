@@ -1,0 +1,65 @@
+eco-demo-x11 #1: startup 614 ms; idle 0 frames 19.9 ms cpu main-wakeups 0 all 1145; update down 1.92 up 7.34 ms, cpu/upd 5.98 (net 5.36) missed 0 extra 0; resize median 13.6 ms; rss 104/104 MiB
+gpui-demo-x11 #1: startup 481 ms; idle 0 frames 63.9 ms cpu main-wakeups 1208 all 2350; update down 5.09 up 4.65 ms, cpu/upd 3.93 (net 1.91) missed 0 extra 0; resize median 11.7 ms; rss 145/146 MiB
+eco-grid200-x11 #1: startup 360 ms; idle 0 frames 25.5 ms cpu main-wakeups 0 all 1151; update down 1.89 up 2.14 ms, cpu/upd 3.38 (net 2.57) missed 0 extra 0; rss 99/99 MiB
+gpui-grid200-x11 #2: startup 500 ms; idle 0 frames 65.6 ms cpu main-wakeups 1207 all 2347; update down 6.35 up 5.17 ms, cpu/upd 4.96 (net 2.89) missed 0 extra 0; rss 149/149 MiB
+eco-grid1000-x11 #1: startup 377 ms; idle 0 frames 21.1 ms cpu main-wakeups 0 all 1143; update down 6.80 up 7.16 ms, cpu/upd 8.28 (net 7.61) missed 0 extra 0; rss 95/95 MiB
+gpui-grid1000-x11 #1: startup 538 ms; idle 0 frames 66.5 ms cpu main-wakeups 1214 all 2363; update down 10.99 up 11.83 ms, cpu/upd 10.51 (net 8.40) missed 0 extra 0; rss 161/162 MiB
+eco-grid5000-x11 #1: startup 537 ms; idle 0 frames 20.5 ms cpu main-wakeups 0 all 1145; update down 34.41 up 34.37 ms, cpu/upd 33.88 (net 33.23) missed 0 extra 0; rss 111/113 MiB
+gpui-grid5000-x11 #1: startup 562 ms; idle 0 frames 74.9 ms cpu main-wakeups 1214 all 2359; update down 34.53 up 33.12 ms, cpu/upd 33.85 (net 31.48) missed 0 extra 0; rss 215/215 MiB
+eco-demo-x11 #2: startup 542 ms; idle 0 frames 21.8 ms cpu main-wakeups 0 all 1142; update down 1.98 up 7.01 ms, cpu/upd 5.85 (net 5.16) missed 0 extra 0; resize median 11.9 ms; rss 104/104 MiB
+gpui-demo-x11 #2: startup 429 ms; idle 0 frames 70.8 ms cpu main-wakeups 1209 all 2353; update down 4.12 up 6.23 ms, cpu/upd 3.99 (net 1.75) missed 0 extra 0; resize median 11.7 ms; rss 144/145 MiB
+eco-grid200-x11 #2: startup 299 ms; idle 0 frames 20.1 ms cpu main-wakeups 0 all 1141; update down 1.91 up 2.17 ms, cpu/upd 3.39 (net 2.75) missed 0 extra 0; rss 99/99 MiB
+gpui-grid200-x11 #3: startup 444 ms; idle 0 frames 64.1 ms cpu main-wakeups 1222 all 2367; update down 6.88 up 6.49 ms, cpu/upd 4.78 (net 2.75) missed 0 extra 0; rss 146/147 MiB
+eco-grid1000-x11 #2: startup 327 ms; idle 0 frames 27.7 ms cpu main-wakeups 0 all 1148; update down 8.52 up 9.42 ms, cpu/upd 10.89 (net 10.01) missed 0 extra 0; rss 101/101 MiB
+gpui-grid1000-x11 #2: startup 1376 ms; idle 0 frames 84.2 ms cpu main-wakeups 1221 all 2370; update down 11.11 up 12.36 ms, cpu/upd 9.84 (net 7.17) missed 8 extra 0; rss 161/160 MiB
+eco-grid5000-x11 #2: discarded (startup 1076 ms; idle 0 frames 25.0 ms cpu main-wakeups 0 all 1149; update down 20.59 up 21.83 ms, cpu/upd 4.65 (net 3.86) missed 55 extra 1; rss 111/113 MiB; FOREIGN INPUT x1242) -> discarded-2-201931
+Traceback (most recent call last):
+  File "<eco>/bench/tools/batch.py", line 150, in <module>
+    main()
+    ~~~~^^
+  File "<eco>/bench/tools/batch.py", line 142, in main
+    run_slot(config, first[config] + j)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eco>/bench/tools/batch.py", line 103, in run_slot
+    r = run_session(config, rundir)
+  File "<eco>/bench/tools/batch.py", line 71, in run_session
+    out, err = p.communicate()
+               ~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2153, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+=== restart 2026-10-06T20:21:54-03:00: tmpfs runs, load/IO discard rules
+eco-demo-x11 #1: startup 616 ms; idle 0 frames 24.8 ms cpu main-wakeups 0 all 1145; update down 1.93 up 7.05 ms, cpu/upd 5.88 (net 5.09) missed 0 extra 0; resize median 12.1 ms; rss 104/104 MiB; others 90% io-stall 0.3%
+gpui-demo-x11 #1: startup 488 ms; idle 0 frames 73.8 ms cpu main-wakeups 1204 all 2347; update down 5.74 up 5.20 ms, cpu/upd 4.01 (net 1.68) missed 0 extra 0; resize median 19.0 ms; rss 143/144 MiB; others 96% io-stall 0.2%
+eco-grid200-x11 #1: startup 336 ms; idle 0 frames 24.8 ms cpu main-wakeups 0 all 1144; update down 1.92 up 2.22 ms, cpu/upd 3.64 (net 2.85) missed 0 extra 0; rss 97/97 MiB; others 72% io-stall 0.2%
+gpui-grid200-x11 #1: startup 409 ms; idle 0 frames 74.6 ms cpu main-wakeups 1208 all 2352; update down 5.28 up 6.57 ms, cpu/upd 4.92 (net 2.57) missed 0 extra 0; rss 145/146 MiB; others 108% io-stall 0.3%
+eco-grid1000-x11 #1: startup 297 ms; idle 0 frames 23.2 ms cpu main-wakeups 0 all 1142; update down 6.90 up 6.98 ms, cpu/upd 8.13 (net 7.40) missed 0 extra 0; rss 101/101 MiB; others 82% io-stall 0.1%
+gpui-grid1000-x11 #1: startup 442 ms; idle 0 frames 78.2 ms cpu main-wakeups 1209 all 2351; update down 10.99 up 10.62 ms, cpu/upd 10.04 (net 7.57) missed 0 extra 0; rss 160/160 MiB; others 72% io-stall 0.2%
+eco-grid5000-x11 #1: startup 483 ms; idle 0 frames 23.5 ms cpu main-wakeups 0 all 1145; update down 31.81 up 32.46 ms, cpu/upd 32.24 (net 31.50) missed 0 extra 0; rss 117/120 MiB; others 83% io-stall 0.1%
+gpui-grid5000-x11 #1: startup 479 ms; idle 0 frames 83.0 ms cpu main-wakeups 1206 all 2345; update down 35.16 up 33.32 ms, cpu/upd 34.10 (net 31.47) missed 0 extra 0; rss 216/216 MiB; others 100% io-stall 0.1%
+eco-demo-x11 #2: discarded (startup 488 ms; idle 0 frames 25.5 ms cpu main-wakeups 0 all 1138; update down 1.99 up 7.70 ms, cpu/upd 4.54 (net 3.73) missed 20 extra 1; resize median 15.1 ms; rss 104/105 MiB; others 110% io-stall 0.2%; FOREIGN INPUT x43) -> discarded-2-202858
+Traceback (most recent call last):
+  File "<eco>/bench/tools/batch.py", line 164, in <module>
+    main()
+    ~~~~^^
+  File "<eco>/bench/tools/batch.py", line 156, in main
+    run_slot(config, first[config] + j)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eco>/bench/tools/batch.py", line 115, in run_slot
+    r = run_session(config, scratch)
+  File "<eco>/bench/tools/batch.py", line 71, in run_session
+    out, err = p.communicate()
+               ~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2153, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

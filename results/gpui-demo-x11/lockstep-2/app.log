@@ -1,0 +1,166 @@
+launch_mono_ns 76243138077749
+redraw 1 at 416 ms
+redraw 2 at 438 ms
+redraw 3 at 454 ms
+input: focus-in
+redraw 4 at 12470 ms
+redraw 5 at 12762 ms
+input: key-down tab
+redraw 6 at 12770 ms
+input: key-up tab
+input: key-down space
+redraw 7 at 13453 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 8 at 13754 ms
+input: key-down space
+redraw 9 at 14054 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 10 at 14354 ms
+input: key-down space
+redraw 11 at 14654 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 12 at 14954 ms
+input: key-down space
+redraw 13 at 15254 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 14 at 15555 ms
+input: key-down space
+redraw 15 at 15855 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 16 at 16155 ms
+input: key-down space
+redraw 17 at 16455 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 18 at 16755 ms
+input: key-down space
+redraw 19 at 17055 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 20 at 17356 ms
+input: key-down space
+redraw 21 at 17656 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 22 at 17956 ms
+input: key-down space
+redraw 23 at 18256 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 24 at 18556 ms
+input: key-down space
+redraw 25 at 18856 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 26 at 19157 ms
+input: key-down space
+redraw 27 at 19457 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 28 at 19749 ms
+input: key-down space
+redraw 29 at 20049 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 30 at 20349 ms
+input: key-down space
+redraw 31 at 20649 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 32 at 20949 ms
+input: key-down space
+redraw 33 at 21249 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 34 at 21550 ms
+input: key-down space
+redraw 35 at 21850 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 36 at 22150 ms
+input: key-down space
+redraw 37 at 22450 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 38 at 22750 ms
+input: key-down space
+redraw 39 at 23050 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 40 at 23351 ms
+input: key-down space
+redraw 41 at 23651 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 42 at 23951 ms
+input: key-down space
+redraw 43 at 24251 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 44 at 24551 ms
+input: key-down space
+redraw 45 at 24851 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 46 at 25152 ms
+input: key-down space
+redraw 47 at 25452 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 48 at 25752 ms
+input: key-down space
+redraw 49 at 26052 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 50 at 26352 ms
+input: key-down space
+redraw 51 at 26652 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 52 at 26953 ms
+input: key-down space
+redraw 53 at 27253 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 54 at 27553 ms
+input: key-down space
+redraw 55 at 27853 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 56 at 28153 ms
+input: key-down space
+redraw 57 at 28453 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 58 at 28754 ms
+input: key-down space
+redraw 59 at 29054 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 60 at 29354 ms
+input: key-down space
+redraw 61 at 29654 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 62 at 29954 ms
+input: key-down space
+redraw 63 at 30254 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 64 at 30555 ms
+input: key-down space
+redraw 65 at 30855 ms
+input: -> 1 activation(s)
+input: key-up space
+redraw 66 at 31155 ms
+redraw 67 at 32175 ms
+redraw 68 at 33702 ms
+redraw 69 at 35199 ms
+redraw 70 at 36712 ms
+redraw 71 at 38221 ms
+exit=0

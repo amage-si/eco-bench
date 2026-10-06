@@ -1,0 +1,10 @@
+# Build outputs
+/gpui/target/
+/tools/monoexec
+/tools/presentlog/*.so
+/tools/cmap_equiv
+__pycache__/
+*.pyc
+# Local scratch (stripped copies, patches)
+/.work/
+perf.data*
