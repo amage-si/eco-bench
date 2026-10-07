@@ -1131,5 +1131,360 @@
    "p90": 45.184532600000004,
    "n": 90
   }
+ },
+ "eco-demo-x11-redraw": {
+  "sessions": [
+   "eco-demo-x11-redraw/1",
+   "eco-demo-x11-redraw/2",
+   "eco-demo-x11-redraw/3"
+  ],
+  "startup_ms": {
+   "median": 610.377548,
+   "min": 604.71043,
+   "max": 625.861394
+  },
+  "cpu_ms_per_update": {
+   "median": 5.42801095,
+   "min": 5.147799433333334,
+   "max": 5.448077433333333
+  },
+  "cpu_ms_per_update_net": {
+   "median": 4.692983770629659,
+   "min": 4.372228721208147,
+   "max": 4.705404609619614
+  },
+  "main_cpu_ms_per_update": {
+   "median": 3.9146264,
+   "min": 3.75738325,
+   "max": 3.92517315
+  },
+  "idle_frames": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_cpu_ms": {
+   "median": 23.887649,
+   "min": 22.858852,
+   "max": 24.53438
+  },
+  "idle_main_wakeups": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_wakeups": {
+   "median": 1142,
+   "min": 1141,
+   "max": 1143
+  },
+  "rss_mib": {
+   "median": 104.66015625,
+   "min": 104.359375,
+   "max": 151.48046875
+  },
+  "peak_rss_mib": {
+   "median": 105.1015625,
+   "min": 104.703125,
+   "max": 151.60546875
+  },
+  "missed": 0,
+  "extra": 0,
+  "latency_down_ms": {
+   "median": 0.693068,
+   "p90": 0.8095291,
+   "n": 90
+  },
+  "latency_up_ms": {
+   "median": 7.044776,
+   "p90": 9.2401639,
+   "n": 90
+  },
+  "resize_ms": {
+   "median": 15.080352,
+   "min": 14.795506,
+   "max": 15.409899
+  }
+ },
+ "eco-demo-x11-text": {
+  "sessions": [
+   "eco-demo-x11-text/1",
+   "eco-demo-x11-text/2",
+   "eco-demo-x11-text/3"
+  ],
+  "startup_ms": {
+   "median": 526.367117,
+   "min": 478.226875,
+   "max": 551.786771
+  },
+  "cpu_ms_per_update": {
+   "median": 2.3582528,
+   "min": 2.23923105,
+   "max": 2.3729027166666667
+  },
+  "cpu_ms_per_update_net": {
+   "median": 1.6043033576696628,
+   "min": 1.5035505035262788,
+   "max": 1.6312258242844717
+  },
+  "main_cpu_ms_per_update": {
+   "median": 0.80423815,
+   "min": 0.7660486333333333,
+   "max": 0.8483047166666666
+  },
+  "idle_frames": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_cpu_ms": {
+   "median": 23.272252,
+   "min": 22.99972,
+   "max": 24.314934
+  },
+  "idle_main_wakeups": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_wakeups": {
+   "median": 1143,
+   "min": 1140,
+   "max": 1145
+  },
+  "rss_mib": {
+   "median": 96.62109375,
+   "min": 96.38671875,
+   "max": 96.6796875
+  },
+  "peak_rss_mib": {
+   "median": 96.9375,
+   "min": 96.87890625,
+   "max": 96.94140625
+  },
+  "missed": 0,
+  "extra": 0,
+  "latency_down_ms": {
+   "median": 0.664853,
+   "p90": 0.8235532,
+   "n": 90
+  },
+  "latency_up_ms": {
+   "median": 0.866098,
+   "p90": 2.8872698000000003,
+   "n": 90
+  },
+  "resize_ms": {
+   "median": 8.676419,
+   "min": 7.982568,
+   "max": 11.500469
+  }
+ },
+ "eco-grid200-x11-text": {
+  "sessions": [
+   "eco-grid200-x11-text/1",
+   "eco-grid200-x11-text/2",
+   "eco-grid200-x11-text/3"
+  ],
+  "startup_ms": {
+   "median": 309.787635,
+   "min": 306.445249,
+   "max": 339.094445
+  },
+  "cpu_ms_per_update": {
+   "median": 2.041520616666667,
+   "min": 1.7283074333333333,
+   "max": 2.04223045
+  },
+  "cpu_ms_per_update_net": {
+   "median": 1.3470567362649344,
+   "min": 1.0192821681729358,
+   "max": 1.3615185802111813
+  },
+  "main_cpu_ms_per_update": {
+   "median": 0.5604478666666667,
+   "min": 0.5535638,
+   "max": 0.5810204666666666
+  },
+  "idle_frames": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_cpu_ms": {
+   "median": 21.991885,
+   "min": 21.511244,
+   "max": 22.431317
+  },
+  "idle_main_wakeups": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_wakeups": {
+   "median": 1144,
+   "min": 1144,
+   "max": 1145
+  },
+  "rss_mib": {
+   "median": 92.9765625,
+   "min": 92.9375,
+   "max": 141.5703125
+  },
+  "peak_rss_mib": {
+   "median": 93.46484375,
+   "min": 93.45703125,
+   "max": 141.7734375
+  },
+  "missed": 0,
+  "extra": 0,
+  "latency_down_ms": {
+   "median": 0.5091065,
+   "p90": 0.6056827000000001,
+   "n": 90
+  },
+  "latency_up_ms": {
+   "median": 0.6128905,
+   "p90": 1.7638704000000016,
+   "n": 90
+  }
+ },
+ "eco-grid1000-x11-text": {
+  "sessions": [
+   "eco-grid1000-x11-text/1",
+   "eco-grid1000-x11-text/2",
+   "eco-grid1000-x11-text/3"
+  ],
+  "startup_ms": {
+   "median": 271.270233,
+   "min": 261.470944,
+   "max": 312.990155
+  },
+  "cpu_ms_per_update": {
+   "median": 1.9954223333333332,
+   "min": 1.9851246333333332,
+   "max": 2.0712856333333334
+  },
+  "cpu_ms_per_update_net": {
+   "median": 1.2802447652264313,
+   "min": 1.278800911122858,
+   "max": 1.3133732335631703
+  },
+  "main_cpu_ms_per_update": {
+   "median": 0.6006035500000001,
+   "min": 0.57287225,
+   "max": 0.6063709166666666
+  },
+  "idle_frames": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_cpu_ms": {
+   "median": 22.62516,
+   "min": 22.344206,
+   "max": 23.975608
+  },
+  "idle_main_wakeups": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_wakeups": {
+   "median": 1142,
+   "min": 1139,
+   "max": 1143
+  },
+  "rss_mib": {
+   "median": 94.9296875,
+   "min": 94.9140625,
+   "max": 95.0
+  },
+  "peak_rss_mib": {
+   "median": 95.28125,
+   "min": 95.26953125,
+   "max": 95.35546875
+  },
+  "missed": 0,
+  "extra": 0,
+  "latency_down_ms": {
+   "median": 0.5287675000000001,
+   "p90": 0.6262784,
+   "n": 90
+  },
+  "latency_up_ms": {
+   "median": 0.6388715,
+   "p90": 2.692819700000002,
+   "n": 90
+  }
+ },
+ "eco-grid5000-x11-text": {
+  "sessions": [
+   "eco-grid5000-x11-text/1",
+   "eco-grid5000-x11-text/2",
+   "eco-grid5000-x11-text/3"
+  ],
+  "startup_ms": {
+   "median": 318.822396,
+   "min": 313.420569,
+   "max": 326.962864
+  },
+  "cpu_ms_per_update": {
+   "median": 1.9424361666666667,
+   "min": 1.85663355,
+   "max": 2.04663955
+  },
+  "cpu_ms_per_update_net": {
+   "median": 1.2344519712758313,
+   "min": 1.1873474479097623,
+   "max": 1.3673220116928522
+  },
+  "main_cpu_ms_per_update": {
+   "median": 0.5796435666666666,
+   "min": 0.5597845,
+   "max": 0.5967088166666666
+  },
+  "idle_frames": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_cpu_ms": {
+   "median": 21.48959,
+   "min": 21.173088,
+   "max": 22.397084
+  },
+  "idle_main_wakeups": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "idle_wakeups": {
+   "median": 1142,
+   "min": 1140,
+   "max": 1148
+  },
+  "rss_mib": {
+   "median": 97.22265625,
+   "min": 89.109375,
+   "max": 97.36328125
+  },
+  "peak_rss_mib": {
+   "median": 97.703125,
+   "min": 89.49609375,
+   "max": 97.890625
+  },
+  "missed": 0,
+  "extra": 0,
+  "latency_down_ms": {
+   "median": 0.5229005,
+   "p90": 0.6032737,
+   "n": 90
+  },
+  "latency_up_ms": {
+   "median": 0.6043000000000001,
+   "p90": 1.7337136000000009,
+   "n": 90
+  }
  }
 }

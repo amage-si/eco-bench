@@ -112,7 +112,8 @@ def main():
                 report[c] = metrics(ms)
     for c in ("eco-demo-x11-asfound", "eco-demo-x11-fix1", "eco-grid200-x11-asfound", "eco-grid200-x11-fix1",
               "eco-grid1000-x11-asfound", "eco-grid1000-x11-fix1", "eco-grid5000-x11-asfound",
-              "eco-grid5000-x11-fix1"):
+              "eco-grid5000-x11-fix1", "eco-demo-x11-redraw", "eco-demo-x11-text", "eco-grid200-x11-text",
+              "eco-grid1000-x11-text", "eco-grid5000-x11-text"):
         ms = sessions(results, c, ["[0-9]*"])
         if ms:
             report[c] = metrics(ms)
@@ -168,6 +169,38 @@ def main():
                   " | ".join(f"{r['cpu_ms_per_update']['median']:.1f}" for r in rs) + " |")
             print(f"| {label} | Resize → presented, ms | " +
                   " | ".join(f"{r['resize_ms']['median']:.1f}" for r in rs) + " |")
+    after(report, rows)
+
+
+def after(report, rows):
+    """The section after the text cache: the demo before, with the partial
+    redraw alone, with the text cache on top of it, and GPUI; the grids
+    before and after."""
+    cols = [("eco-demo-x11", "Eco before (Runika c2b4af9)"), ("eco-demo-x11-redraw", "Eco, partial redraw alone"),
+            ("eco-demo-x11-text", "Eco, text cache + partial redraw"), ("gpui-demo-x11", "GPUI")]
+    cols = [(c, label) for c, label in cols if c in report]
+    if "eco-demo-x11-text" not in report:
+        return
+    print("\n### After the text cache: demo scene (X11/XWayland, FIFO, 900x560)\n")
+    print("| Metric | " + " | ".join(label for c, label in cols) + " |")
+    print("| --- |" + " --- |" * len(cols))
+    for name, fn in rows:
+        print(f"| {name} | " + " | ".join(fn(report[c]) for c, label in cols) + " |")
+    print("\n### After the text cache: text grid (X11/XWayland)\n")
+    print("| N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | "
+          "Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | "
+          "Idle CPU 10 s, ms | RSS, MiB |")
+    print("| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for n in (200, 1000, 5000):
+        for c, label in ((f"eco-grid{n}-x11", "Eco before"), (f"eco-grid{n}-x11-text", "Eco after"),
+                         (f"gpui-grid{n}-x11", "GPUI")):
+            r = report.get(c)
+            if not r:
+                continue
+            print(f"| {n} | {label} | {len(r['sessions'])} | {f(r['startup_ms'], 0)} | "
+                  f"{lat(r, 'down')} | {lat(r, 'up')} | "
+                  f"{f(r['cpu_ms_per_update'], 1)} / {f(r['main_cpu_ms_per_update'], 1)} | "
+                  f"{f(r['idle_cpu_ms'], 0)} | {r['rss_mib']['median']:.0f} |")
 
 
 if __name__ == "__main__":

@@ -15,9 +15,19 @@ corrected where a run showed it was wrong; each correction is stated.
 text grid, Eco before and after two Runika fixes found here, binary sizes
 and build times are measured. The campaign was stopped before the GPUI
 Wayland column, the XIM side note, profiles after the fixes and saved
-captures; see [Not yet measured](#not-yet-measured).
+captures; see [Not yet measured](#not-yet-measured). Later that night Eco
+was measured again [after the text cache](#after-the-text-cache) (with
+another session's partial redraw); the tables before that section are kept
+as first measured.
 
 ## Summary
+
+After the text cache and the partial redraw ([details](#after-the-text-cache);
+medians, X11): Eco's activation that changes text takes 0.9 ms from key-up to
+the presented frame (GPUI 5.3), with 2.36 ms of CPU per update on all threads
+and 0.80 ms on the main thread (GPUI 3.99 and 2.58); the grids respond in
+0.6 ms at 200, 1000 and 5000 labels (GPUI 6.2, 11.5, 33.2). The demo still
+starts later (526 against 481 ms). The first measurement follows.
 
 On X11, after the Runika fixes (medians):
 
@@ -340,6 +350,137 @@ the before/after runs) are kept only if the 1-minute load average was
 below 6 when they started. GPUI has 2 or 3 sessions per configuration and
 Eco 5 or 6, because the campaign was stopped partway.
 
+## After the text cache
+
+**Status (2026-10-06, night):** a second round attacked the text path the
+profile pointed at (the ranked items 1 and 3 below). It ran at the same
+time as another session's partial redraw (retained frames, damage-only
+redraws, culling of operations outside their clip: Chromi
+[c59b59c](https://github.com/amage-si/chromi/commit/c59b59c), Voltra
+[264d689](https://github.com/amage-si/voltra/commit/264d689)), so the Eco
+measured here has both. The demo was also measured with the partial redraw
+alone, to tell the two apart. The tables of the sections above are kept as
+they were measured.
+
+### What changed in the text path
+
+| Repository | Commit | Change |
+| --- | --- | --- |
+| Runika | [47a95f0](https://github.com/amage-si/runika/commit/47a95f0) | Font bytes in a tree of 32-bit words: reads borrow the tree, with no `U32.pow`, no division and no closure per read. An aligned `u32` read: 1.7–1.9 µs → 0.20–0.26 µs. |
+| Runika | [c651a8d](https://github.com/amage-si/runika/commit/c651a8d) | Every font carries a Latin-1 table (glyph and advance for U+0000..U+00FF, built when the font is parsed, same answers and errors as the `cmap`/`hmtx` path); fonts are boxed (see the finding below). |
+| Syllo | [484d2b7](https://github.com/amage-si/syllo/commit/484d2b7) | Layout reads the table, carries its state in parameters instead of a closure per character, and measures a word once. |
+| Voltra | [8b26312](https://github.com/amage-si/voltra/commit/8b26312), [52f51a6](https://github.com/amage-si/voltra/commit/52f51a6) | A persistent map by U32 key (Patricia trie, `keys.bend`); the atlas finds entries in it instead of walking a list with a closure per step (~10,000 closure calls per frame in the demo). |
+| Chromi | [182f1ab](https://github.com/amage-si/chromi/commit/182f1ab), [b05b1f8](https://github.com/amage-si/chromi/commit/b05b1f8) | The demo's text keeps glyph masks by atlas key and prepared runs by (text, size, width) in key maps; an unchanged text costs a hash, a lookup and a comparison. Checked bit for bit against preparing from scratch. |
+
+Why not a flat byte array: Bend 2.0.35 compiles `Array<U32>` to a native
+block (~1 ns per read), but arrays are affine and a font is a shared `Data`
+value kept in every model; Runika's [docs/api.md](https://github.com/amage-si/runika/blob/main/docs/api.md#byte-storage-and-performance)
+has the measurements and the reasoning.
+
+Windowless timing of the demo's update work (pure Bend, no window, same
+font and assets, 100 iterations, `--threads 2`):
+
+| Work | Before (Runika c2b4af9) | After |
+| --- | --- | --- |
+| Activation: rebuild the model (seven texts, layout), draw list, GPU plan | 5.1 ms | 0.11 ms |
+| Hover change: draw list and GPU plan | 1.12 ms | 0.08 ms |
+| The seven texts laid out by Syllo alone | 1.82 ms | 0.06 ms |
+| Font load | 27 ms | 20 ms |
+
+### A finding: the widest record sets the cost of every call
+
+Bend's compiler passes a record that is not recursive flattened, one word
+per field, through every call, and the generated C gives every segment the
+same register frame, as wide as the widest record or continuation in the
+program (`WL_RESW`). The demo's model holds the font (25 words), seven runs
+and ten rectangles: its frame was 122 words. Adding the font's two new
+fields and the text cache made it 128, and every call of the program got
+about a third slower (decoding the demo's PNG and SVG went from ~147 to
+~198 ms; padding the old model by the same six words did the same, while
+two or four words changed nothing). Runika's `Font` is now recursive (an
+`Alias` constructor nothing builds), so the compiler keeps it behind one
+pointer: the demo's frame is 104 words, and a copy of a font counts one
+reference instead of five. Any app can check its own with
+`bend app.bend -o app.c` and `grep "#define WL_RESW" app.c`.
+
+### Results after the text cache
+
+Same scenes, method, fairness rules and machine as above, Eco only (GPUI's
+columns are the earlier sessions). Eco binaries: `eco-text`/`grid-text` built
+from the commits above on top of the partial redraw; `eco-redraw` with the
+partial redraw alone (Runika c2b4af9, Syllo d360082). Medians, ranges across
+sessions in parentheses; latencies pool every update (median / p90).
+
+| Metric | Eco before (Runika c2b4af9) | Eco, partial redraw alone | Eco, text cache + partial redraw | GPUI |
+| --- | --- | --- | --- | --- |
+| Sessions | 6 | 3 | 3 | 3 |
+| Startup to first presented frame, ms | 537 (524–616) | 610 (605–626) | 526 (478–552) | 481 (429–488) |
+| Key-down → presented, ms (median / p90) | 1.9 / 2.2 | 0.7 / 0.8 | 0.7 / 0.8 | 5.0 / 8.4 |
+| Key-up, activation → presented, ms (median / p90) | 7.3 / 9.2 | 7.0 / 9.2 | 0.9 / 2.9 | 5.3 / 8.5 |
+| CPU per update, all threads, ms | 6.07 (5.85–6.42) | 5.43 (5.15–5.45) | 2.36 (2.24–2.37) | 3.99 (3.93–4.01) |
+| CPU per update minus idle rate, ms | 5.41 (5.09–5.56) | 4.69 (4.37–4.71) | 1.60 (1.50–1.63) | 1.75 (1.68–1.91) |
+| CPU per update, main thread, ms | 4.62 (4.43–4.85) | 3.91 (3.76–3.93) | 0.80 (0.77–0.85) | 2.58 (2.56–2.63) |
+| Idle 10 s: frames presented | 0 | 0 | 0 | 0 |
+| Idle 10 s: CPU, ms | 22.1 (19.9–27.5) | 23.9 (22.9–24.5) | 23.3 (23.0–24.3) | 70.8 (63.9–73.8) |
+| Idle 10 s: main-thread wakeups | 0 | 0 | 0 | 1208 (1204–1209) |
+| Idle 10 s: wakeups, all threads | 1145 (1142–1146) | 1142 (1141–1143) | 1143 (1140–1145) | 2350 (2347–2353) |
+| RSS after idle / peak, MiB | 104 / 104 | 105 / 105 | 97 / 97 | 144 / 145 |
+| Resize → presented at the new size, ms (median step) | 13.5 (11.9–18.4) | 15.1 (14.8–15.4) | 8.7 (8.0–11.5) | 11.7 (11.7–19.0) |
+
+| N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | Idle CPU 10 s, ms | RSS, MiB |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 200 | Eco before | 6 | 320 (299–360) | 1.9 / 2.1 | 2.2 / 3.8 | 3.4 (3.3–3.6) / 2.0 (2.0–2.1) | 22 (20–25) | 99 |
+| 200 | Eco after | 3 | 310 (306–339) | 0.5 / 0.6 | 0.6 / 1.8 | 2.0 (1.7–2.0) / 0.6 (0.6–0.6) | 22 (22–22) | 93 |
+| 200 | GPUI | 3 | 444 (409–500) | 6.1 / 9.7 | 6.2 / 9.1 | 4.9 (4.8–5.0) / 3.5 (3.5–3.6) | 66 (64–75) | 146 |
+| 1000 | Eco before | 6 | 332 (297–378) | 6.9 / 8.6 | 7.2 / 9.8 | 8.2 (7.8–10.9) / 6.8 (6.5–9.1) | 21 (18–28) | 101 |
+| 1000 | Eco after | 3 | 271 (261–313) | 0.5 / 0.6 | 0.6 / 2.7 | 2.0 (2.0–2.1) / 0.6 (0.6–0.6) | 23 (22–24) | 95 |
+| 1000 | GPUI | 2 | 490 (442–538) | 11.0 / 14.7 | 11.5 / 14.5 | 10.3 (10.0–10.5) / 8.9 (8.5–9.2) | 72 (67–78) | 160 |
+| 5000 | Eco before | 5 | 483 (470–541) | 32.7 / 35.0 | 32.9 / 35.4 | 32.5 (32.2–33.9) / 31.2 (30.6–32.5) | 21 (20–23) | 117 |
+| 5000 | Eco after | 3 | 319 (313–327) | 0.5 / 0.6 | 0.6 / 1.7 | 1.9 (1.9–2.0) / 0.6 (0.6–0.6) | 21 (21–22) | 97 |
+| 5000 | GPUI | 2 | 521 (479–562) | 34.9 / 37.0 | 33.2 / 37.4 | 34.0 (33.8–34.1) / 32.5 (32.5–32.5) | 79 (75–83) | 215 |
+
+Reading the tables:
+
+- The partial redraw alone makes input that changes no text cheap (key-down
+  1.9 → 0.7 ms) but leaves the activation at 7.0 ms: rebuilding the text was
+  the cost. The text cache brings the activation to 0.9 ms and the CPU per
+  update to 2.36 ms (main thread 0.80 ms), below GPUI's 5.3 ms and 3.99 ms.
+- The activation's p90 (2.9 ms) comes from the first ten activations
+  (1.2–4.7 ms): each shows a digit for the first time, and the frames that
+  upload a new glyph to the atlas spend 1–4 ms in `scene + GPU` against 0–1 ms
+  for the others (the program's log). Voltra's `update` waits for the device
+  to go idle (`vkDeviceWaitIdle`) and then for the copy, which is the likely
+  cost (read in the code, not timed alone); parsing and rasterizing a new
+  16 px glyph take ~0.12 ms (measured). From the eleventh activation on every
+  activation takes 0.7–1.1 ms.
+- The grids include both changes and were not measured with the partial
+  redraw alone. With 5000 labels the earlier cost was the full rebuild (see
+  above), so most of that gain (32.9 → 0.6 ms) is presumably the partial
+  redraw's (damage only, culling); re-preparing the counter is the text
+  cache's part.
+- Startup: 526 ms against 610 with the partial redraw alone and 537 before;
+  text is ~30 ms of it (font ~20 ms, the model's 93 glyphs ~10 ms). Window
+  and Vulkan setup (~250 ms) and decoding the PNG and SVG (~135 ms) are most
+  of the rest. GPUI starts in 481 ms.
+- Resident memory went down (97 against 104–105 MiB), probably mostly the
+  word tree (a quarter of the byte tree's nodes).
+
+Correctness: every suite passes (Runika 58, Syllo 19, Dithra 15 and its
+`all_tests` 92 with Runika's and Syllo's, Voltra 76 + 11 key-map + 13 GPU,
+Chromi 74 + 20 GPU + 7 text-cache, Mokko 14 + 5, Auvia 74); a window capture of the GPU demo equals Chromi's CPU reference in
+every pixel at 900x560 and, after the window manager resized it, at 1100x700,
+and those references equal the earlier round's (0 differing pixels each).
+
+What the profile shows now (`perf`, 10 activations, `tools/profile.py`):
+~45% of the samples in Eco's program (the runtime's closure calls and memory
+release, Ankra's loop, building the frame, packing quads; text is visible
+only where a glyph is new), ~24% in the NVIDIA driver (mostly its own update
+thread), ~15% in the kernel and ~14% in libc.
+
+Sessions: 3 per configuration; one demo session was set aside as loaded
+(other processes at 441% CPU) and three grid sessions as discarded (pointer
+input from the machine's user), all rerun (`loaded-*`, `discarded-*`).
+
 ## Where Eco stands, and what to do next
 
 What the numbers show:
@@ -353,7 +494,8 @@ What the numbers show:
   2.6 ms in the demo). After the fixes this was not profiled again; the
   work is re-preparing all seven demo texts (Syllo layout, glyph cache
   lookups in linked lists, Runika reads through the byte tree), the Tessra
-  layout and rebuilding the whole draw list.
+  layout and rebuilding the whole draw list. (After the text cache: main
+  thread 0.80 ms; see [After the text cache](#after-the-text-cache).)
 - Building Eco is slow: one compilation unit, 85–93 s and up to 5 GiB per
   change.
 
@@ -363,12 +505,15 @@ measured):
 1. **Text caching:** memoize glyph id and advance per character in
    Syllo/Runika and keep the glyph cache in an array instead of a list
    searched linearly. Expected to bring the demo's activation from about 7
-   toward 2 ms and to shorten every startup.
+   toward 2 ms and to shorten every startup. *Done: activation 0.9 ms; see
+   [After the text cache](#after-the-text-cache).*
 2. **Redraw less:** retain the unchanged part of the frame (damage regions)
    and drop draw-list operations outside the window. With 5000 labels the
-   ~33 ms per update is the full rebuild.
+   ~33 ms per update is the full rebuild. *Done by another session (partial
+   redraw); measured together with the text cache.*
 3. **Flat font bytes:** an array instead of Runika's byte tree, O(1) per
-   byte read.
+   byte read. *Done as a word tree (8x faster reads); arrays are affine and
+   cannot live in a shared font; see [After the text cache](#after-the-text-cache).*
 4. **Incremental Bend builds** (toolchain): the largest cost in a day of
    work, 85–93 s per change against 2–4 s.
 5. **Profile startup:** Eco's demo starts 56 ms after GPUI's; PNG decoding
@@ -392,7 +537,10 @@ measured):
   input, since a Wayland client only receives input from the compositor's
   seat); one trial run was disturbed by pointer input and is not reported.
 - GPUI on X11 with the XIM input method (`gpui-demo-x11-xim`).
-- Profiles after the Runika fixes, for Eco and GPUI, and of Eco's startup.
+- Profiles after the Runika fixes for GPUI and of Eco's startup (Eco's
+  activations were profiled after the text cache).
+- The grids with the partial redraw alone, to split the grids' gains
+  between it and the text cache.
 - Saved side-by-side captures of both programs.
 - Repeated clean GPUI builds and the peak memory of cargo builds.
 
@@ -413,6 +561,17 @@ bend examples/eco/grid.bend -o build/bench/grid
 cd ../eco-bench
 python3 tools/batch.py eco-demo-x11 gpui-demo-x11 eco-grid1000-x11 gpui-grid1000-x11 --runs 3 --interleave
 python3 tools/report.py > results/report.md
+```
+
+The configurations after the text cache run binaries named after them:
+`build/bench/eco-text` and `build/bench/grid-text` (the commits listed in
+[After the text cache](#after-the-text-cache) or later),
+`build/bench/eco-redraw` (Chromi c59b59c and Voltra 264d689 with Runika
+c2b4af9 and Syllo d360082):
+
+```sh
+python3 tools/batch.py eco-demo-x11-text eco-demo-x11-redraw --runs 3 --interleave
+python3 tools/batch.py eco-grid200-x11-text eco-grid1000-x11-text eco-grid5000-x11-text --runs 3 --interleave
 ```
 
 `tools/batch.py` lists every configuration. Test windows open on workspace

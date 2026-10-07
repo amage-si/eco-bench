@@ -67,9 +67,11 @@ def run(r: Result<&2, &2, String, F.Font>) -> IO(Unit):
   match r:
     case Fail{e}:
       IO.print("font failed: " ++ e)
-    case Done{F.Font{upem, asc, desc, gap, count, metrics, long, +cmap, hmtx, loca, glyf}}:
+    case Done{F.Font{upem, asc, desc, gap, count, metrics, long, +cmap, hmtx, loca, glyf, sum, latin}}:
       +segs = segments(B.u16(cmap, 6))
       IO.print(report(check(65536n, cmap, segs, 0, Tally{0, 0}), segs))
+    case Done{F.Alias{f}}:
+      IO.print("font failed: unexpected alias")
 
 def main() -> IO(Unit):
   do IO<Unit>:
