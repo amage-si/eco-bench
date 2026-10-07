@@ -427,6 +427,8 @@ sessions in parentheses; latencies pool every update (median / p90).
 | RSS after idle / peak, MiB | 104 / 104 | 105 / 105 | 97 / 97 | 144 / 145 |
 | Resize → presented at the new size, ms (median step) | 13.5 (11.9–18.4) | 15.1 (14.8–15.4) | 8.7 (8.0–11.5) | 11.7 (11.7–19.0) |
 
+With Runika 131874b (the font's tree built in one pass), 2 sessions: startup 528 (509–548) ms, activation 0.8 / 1.9 ms, key-down 0.6 / 0.7 ms, CPU per update 2.21 (2.16–2.26) ms (main thread 0.76 (0.74–0.79)), RSS 93 MiB. The ~13 ms the font load saves (windowless) is within the spread of startup across sessions.
+
 | N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | Idle CPU 10 s, ms | RSS, MiB |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200 | Eco before | 6 | 320 (299–360) | 1.9 / 2.1 | 2.2 / 3.8 | 3.4 (3.3–3.6) / 2.0 (2.0–2.1) | 22 (20–25) | 99 |
@@ -450,18 +452,22 @@ Reading the tables:
   upload a new glyph to the atlas spend 1–4 ms in `scene + GPU` against 0–1 ms
   for the others (the program's log). Voltra's `update` waits for the device
   to go idle (`vkDeviceWaitIdle`) and then for the copy, which is the likely
-  cost (read in the code, not timed alone); parsing and rasterizing a new
-  16 px glyph take ~0.12 ms (measured). From the eleventh activation on every
-  activation takes 0.7–1.1 ms.
+  cost (read in the code, not timed alone); parsing a new glyph's outline
+  takes ~13 µs and rasterizing it at 16 px ~70 µs (measured). From the
+  eleventh activation on every activation takes 0.7–1.1 ms.
 - The grids include both changes and were not measured with the partial
   redraw alone. With 5000 labels the earlier cost was the full rebuild (see
   above), so most of that gain (32.9 → 0.6 ms) is presumably the partial
   redraw's (damage only, culling); re-preparing the counter is the text
   cache's part.
 - Startup: 526 ms against 610 with the partial redraw alone and 537 before;
-  text is ~30 ms of it (font ~20 ms, the model's 93 glyphs ~10 ms). Window
-  and Vulkan setup (~250 ms) and decoding the PNG and SVG (~135 ms) are most
-  of the rest. GPUI starts in 481 ms.
+  text was ~30 ms of it (font ~20 ms, the model's 93 glyphs ~10 ms). Runika
+  [131874b](https://github.com/amage-si/runika/commit/131874b), after these
+  sessions, builds the font's tree in one pass: loading the font takes ~7 ms
+  (windowless); in the window the startup stays the same within the
+  sessions' spread (528 ms median of 2, line under the demo table). Window and Vulkan setup
+  (~250 ms) and decoding the PNG and SVG (~135 ms) are most of the rest.
+  GPUI starts in 481 ms.
 - Resident memory went down (97 against 104–105 MiB), probably mostly the
   word tree (a quarter of the byte tree's nodes).
 
@@ -479,7 +485,10 @@ thread), ~15% in the kernel and ~14% in libc.
 
 Sessions: 3 per configuration; one demo session was set aside as loaded
 (other processes at 441% CPU) and three grid sessions as discarded (pointer
-input from the machine's user), all rerun (`loaded-*`, `discarded-*`).
+input from the machine's user), all rerun (`loaded-*`, `discarded-*`). The
+`eco-demo-x11-final` run (Runika 131874b) was stopped after 2 clean sessions
+and 4 discarded ones, while the machine's user was working over the test
+window.
 
 ## Where Eco stands, and what to do next
 
@@ -571,6 +580,7 @@ c2b4af9 and Syllo d360082):
 
 ```sh
 python3 tools/batch.py eco-demo-x11-text eco-demo-x11-redraw --runs 3 --interleave
+python3 tools/batch.py eco-demo-x11-final --runs 3              # build/bench/eco-final: Runika 131874b
 python3 tools/batch.py eco-grid200-x11-text eco-grid1000-x11-text eco-grid5000-x11-text --runs 3 --interleave
 ```
 

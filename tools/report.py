@@ -112,8 +112,8 @@ def main():
                 report[c] = metrics(ms)
     for c in ("eco-demo-x11-asfound", "eco-demo-x11-fix1", "eco-grid200-x11-asfound", "eco-grid200-x11-fix1",
               "eco-grid1000-x11-asfound", "eco-grid1000-x11-fix1", "eco-grid5000-x11-asfound",
-              "eco-grid5000-x11-fix1", "eco-demo-x11-redraw", "eco-demo-x11-text", "eco-grid200-x11-text",
-              "eco-grid1000-x11-text", "eco-grid5000-x11-text"):
+              "eco-grid5000-x11-fix1", "eco-demo-x11-redraw", "eco-demo-x11-text", "eco-demo-x11-final",
+              "eco-grid200-x11-text", "eco-grid1000-x11-text", "eco-grid5000-x11-text"):
         ms = sessions(results, c, ["[0-9]*"])
         if ms:
             report[c] = metrics(ms)
@@ -186,6 +186,12 @@ def after(report, rows):
     print("| --- |" + " --- |" * len(cols))
     for name, fn in rows:
         print(f"| {name} | " + " | ".join(fn(report[c]) for c, label in cols) + " |")
+    r = report.get("eco-demo-x11-final")
+    if r:
+        print(f"\nWith Runika 131874b (the font's tree built in one pass), {len(r['sessions'])} sessions: startup "
+              f"{f(r['startup_ms'], 0)} ms, activation {lat(r, 'up')} ms, key-down {lat(r, 'down')} ms, CPU per "
+              f"update {f(r['cpu_ms_per_update'], 2)} ms (main thread {f(r['main_cpu_ms_per_update'], 2)}), RSS "
+              f"{r['rss_mib']['median']:.0f} MiB.")
     print("\n### After the text cache: text grid (X11/XWayland)\n")
     print("| N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | "
           "Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | "

@@ -11,6 +11,7 @@ rustc: rustc 1.99.0 (b940084d7 2026-09-28)
 cargo: cargo 1.99.0 (5f94df478 2026-08-27)
 gpui: zeronsh/zui c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add
 wgpu: 29.0.4
-# binaries of the text-cache round (built 2026-10-06 ~23:00; later commits are documentation only):
+# binaries of the text-cache round (built 2026-10-06 ~23:00; later commits are documentation only, except eco-final):
 eco-text, grid-text: Ankra c3a8c94, Chromi b05b1f8, Dithra 30930b5, Kairo 7d87a92, Mokko 1935d1d, Ocula f44281d, Runika c651a8d, Splina a8ab0e3, Syllo 484d2b7, Tessra f40c025, Voltra 52f51a6
 eco-redraw: Ankra c3a8c94, Chromi c59b59c, Dithra 30930b5, Kairo 7d87a92, Mokko 1935d1d, Ocula f44281d, Runika c2b4af9, Splina a8ab0e3, Syllo d360082, Tessra f40c025, Voltra 264d689
+eco-final: eco-text with Runika 131874b (built 2026-10-07 ~00:05)

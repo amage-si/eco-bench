@@ -49,6 +49,8 @@ CONFIGS = {
     # (Chromi c59b59c, Voltra 264d689); "redraw" is the partial redraw alone.
     "eco-demo-x11-text": eco("./build/bench/eco-text", [], ECO_DEMO_TITLE, resize=True),
     "eco-demo-x11-redraw": eco("./build/bench/eco-redraw", [], ECO_DEMO_TITLE, resize=True),
+    # eco-text plus Runika 131874b (the font's tree built in one pass).
+    "eco-demo-x11-final": eco("./build/bench/eco-final", [], ECO_DEMO_TITLE, resize=True),
     "gpui-demo-x11": gpui(["demo"], "GPUI bench - demo", resize=True),
     "gpui-demo-x11-xim": gpui(["demo"], "GPUI bench - demo", mode="x11-xim", resize=True),
     "gpui-demo-x11-auto": gpui(["demo"], "GPUI bench - demo", update="auto", resize=True),

@@ -60,6 +60,8 @@
 | RSS after idle / peak, MiB | 104 / 104 | 105 / 105 | 97 / 97 | 144 / 145 |
 | Resize → presented at the new size, ms (median step) | 13.5 (11.9–18.4) | 15.1 (14.8–15.4) | 8.7 (8.0–11.5) | 11.7 (11.7–19.0) |
 
+With Runika 131874b (the font's tree built in one pass), 2 sessions: startup 528 (509–548) ms, activation 0.8 / 1.9 ms, key-down 0.6 / 0.7 ms, CPU per update 2.21 (2.16–2.26) ms (main thread 0.76 (0.74–0.79)), RSS 93 MiB.
+
 ### After the text cache: text grid (X11/XWayland)
 
 | N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | Idle CPU 10 s, ms | RSS, MiB |
