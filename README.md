@@ -17,10 +17,21 @@ and build times are measured. The campaign was stopped before the GPUI
 Wayland column, the XIM side note, profiles after the fixes and saved
 captures; see [Not yet measured](#not-yet-measured). Later that night Eco
 was measured again [after the text cache](#after-the-text-cache) (with
-another session's partial redraw); the tables before that section are kept
-as first measured.
+another session's partial redraw) and [after partial redraw](#after-partial-redraw)
+was finished; the tables before those sections are kept as first measured.
 
 ## Summary
+
+After the partial redraw was finished ([details](#after-partial-redraw);
+medians, X11, the text cache included): with 5000 labels an activation is
+presented 0.6 ms after the key (p90 0.8; GPUI 33.2 / 37.4) with 0.55 ms of
+main-thread CPU per update (GPUI 32.5), and grids of 200, 1000 and 5000
+labels now cost the same; the demo's activation takes 0.8 ms (p90 1.0;
+GPUI 5.3 / 8.5); startup 282 ms with 5000 labels (GPUI 521) and 493 ms for
+the demo (GPUI 481); resident memory 87–93 MiB (GPUI 144–215); idle stays at
+0 frames and 0 main-thread wakeups. A partial frame's present names its
+rectangles, so XWayland hands the compositor about a hundredth of the window
+per update.
 
 After the text cache and the partial redraw ([details](#after-the-text-cache);
 medians, X11): Eco's activation that changes text takes 0.9 ms from key-up to
@@ -490,6 +501,183 @@ input from the machine's user), all rerun (`loaded-*`, `discarded-*`). The
 and 4 discarded ones, while the machine's user was working over the test
 window.
 
+## After partial redraw
+
+**Status (2026-10-07, early morning):** the bench's second ranked item,
+"redraw less", is done: Eco keeps each frame as parts, redraws only what
+changed, skips content outside the window and tells the compositor which
+rectangles changed. The text cache of the previous section ran at the same
+time (its Eco already had the first version of this work); the numbers
+below say which changes each column includes. Earlier tables stay as they
+were measured.
+
+### What changed
+
+| Repository | Commits | Change |
+| --- | --- | --- |
+| Chromi | [fccfc27](https://github.com/amage-si/chromi/commit/fccfc27) | Culling: a bitmap, mask or rounded box that cannot touch a pixel of its clip is not recorded; `S.visible` lets an app skip the work behind content that cannot show. |
+| Chromi | [d4d3c2e](https://github.com/amage-si/chromi/commit/d4d3c2e) | Retained frames (`frame.bend`): a frame is a list of parts with stable ids (a Kairo or Mokko id for a control). The next frame keeps every part whose operations, or the app's stamp, did not change, and records as damage the old and new boxes of the parts that did. `R.repaint` paints only the damage on the CPU. |
+| Chromi | [613ca7f](https://github.com/amage-si/chromi/commit/613ca7f) | `Gpu.render`: each damaged region is redrawn alone (the background, then the quads of every part that meets it, scissored). A part's quads are planned (atlas, packing) once and kept in the part; a kept part costs no lookup or packing. A first frame or a new size is drawn whole. |
+| Chromi | [c59b59c](https://github.com/amage-si/chromi/commit/c59b59c), [95d6274](https://github.com/amage-si/chromi/commit/95d6274) | The demo and the grid keep their last frame. The grid's labels are one stamped part recorded once per window size, labels outside the window skipped; the button is keyed by its Kairo id. A click in the demo lays out only the status line again. |
+| Voltra | [4fcd85f](https://github.com/amage-si/voltra/commit/4fcd85f), [264d689](https://github.com/amage-si/voltra/commit/264d689) | A canvas per target that keeps the picture between frames; `paint` redraws ranges of instances with the scissor on their rectangles, then copies the canvas into the acquired swapchain image (`vkCmdCopyImage`, one new command word in the bridge). |
+| Voltra | [c8baef5](https://github.com/amage-si/voltra/commit/c8baef5) | `VK_KHR_incremental_present`: a partial frame's present names its rectangles. |
+| Voltra | [314a747](https://github.com/amage-si/voltra/commit/314a747) | The canvas and the GPU policy record are passed boxed (the frame-width finding above): the grid's `WL_RESW` went 51 → 55 with the canvas, and is 45 now. |
+| Voltra, Chromi | [1aed3ae](https://github.com/amage-si/voltra/commit/1aed3ae), [a8dc71f](https://github.com/amage-si/chromi/commit/a8dc71f) | New atlas content is copied inside the frame that needs it (texels after the instances in the frame's buffer, barriers in submission order) instead of `update`, which waited for the device to go idle and then for its copy. |
+
+### Correctness
+
+Every partial frame must equal a whole redraw, and that is checked three
+ways. On the CPU (Chromi `tests.bend`, 73 checks), repainting only a frame's
+damage over the last picture equals painting the frame whole for hover, a
+focus ring, a translucent part moved over others, parts removed and added,
+parts reordered and a new size, with a control that differs. On the GPU
+(Chromi `gpu_tests.bend`, 27 checks; Voltra `gpu_tests.bend`, 14), frames
+redrawn partly on Voltra's canvas and read back equal the CPU reference of
+the whole frame in every pixel (400 to 12,000 of 64,000 pixels damaged per
+step), including a glyph the atlas had not seen, uploaded inside the frame,
+and a mask that did not fit, so the atlas started over inside the frame;
+a changed frame stripped of its damage is seen to differ. On the window
+(`grim -T`, `magick compare -metric AE`), the demo and the 5000-label grid,
+driven through FocusIn, Tab, two activations and resizes to 1100x700,
+640x760 and 900x560, equal the previous full-redraw binaries in every
+capture (0 differing pixels), except the final demo's last capture, taken
+after the machine's user moved the pointer through the window: its log shows
+a focus-out, which removed the button's focus ring (153 pixels); that
+step, a whole frame, matched with an earlier build of this work. All other
+suites pass unchanged.
+
+### Partial present: what the compositor gets
+
+A partial frame redraws its regions on the canvas and copies the whole
+canvas into the swapchain image, so the picture is always complete; with
+`VK_KHR_incremental_present` the present also names the regions. To see
+whether that reaches the compositor, [tools/damage.c](tools/damage.c) asks
+the X server's DAMAGE extension for the raw damage of the test window
+(an observer: no input, no focus change) while the 1000-label grid gets Tab
+and two activations
+([results/damage/](results/damage/)):
+
+| Present | Damage per update (after the first frame) | Over 5 updates |
+| --- | --- | --- |
+| Without the extension | the whole window, 900x560 = 504,000 pixels | 2,520,000 pixels |
+| With `VK_KHR_incremental_present` | the button (78x44) and, on activations, the counter (87x16): 3,432 to 4,824 pixels | 19,944 pixels |
+
+So on this NVIDIA driver and XWayland the regions pass through: the X
+server, and so the compositor, gets about a hundredth of the window per
+update. Eco's own work is the same either way (the present call carries a
+few rectangles); the gain is the compositor's. The extension is on wherever
+the device offers it.
+
+### Results after partial redraw
+
+Same scenes, method, fairness rules and machine as above, Eco only (GPUI's
+columns are the earlier sessions). Medians, ranges across sessions in
+parentheses; latencies pool every update (median / p90). Columns, each
+built on the one before: *text cache + first partial redraw* is the
+previous section's Eco; *finished partial redraw* adds incremental present,
+the boxed GPU record and the demo's status-only relayout (Voltra c8baef5,
+Chromi 95d6274); *+ atlas uploads in the frame* also records atlas uploads
+inside the frame (Voltra 1aed3ae, Chromi a8dc71f) and has Runika 131874b
+(faster font load): it is the final build. Revisions: [results/versions-partial.txt](results/versions-partial.txt).
+Every binary ran once before its sessions, so the driver's shader cache was
+warm: one session that was a new binary's first run held about 40 MiB more
+resident memory and started about 100 ms later, consistent with the driver
+compiling the pipeline then (that session is `early-1` of the demo).
+
+#### Demo scene (X11/XWayland, FIFO, 900x560)
+
+| Metric | Eco before (Runika c2b4af9) | Eco, text cache + first partial redraw | Eco, finished partial redraw + text cache | Eco, + atlas uploads in the frame | GPUI |
+| --- | --- | --- | --- | --- | --- |
+| Sessions | 6 | 3 | 3 | 3 | 3 |
+| Startup to first presented frame, ms | 537 (524–616) | 526 (478–552) | 517 (492–610) | 493 (477–530) | 481 (429–488) |
+| Key-down → presented, ms (median / p90) | 1.9 / 2.2 | 0.7 / 0.8 | 0.7 / 0.8 | 0.6 / 0.8 | 5.0 / 8.4 |
+| Key-up, activation → presented, ms (median / p90) | 7.3 / 9.2 | 0.9 / 2.9 | 0.8 / 2.2 | 0.8 / 1.0 | 5.3 / 8.5 |
+| CPU per update, all threads, ms | 6.07 (5.85–6.42) | 2.36 (2.24–2.37) | 2.29 (2.14–2.38) | 2.24 (1.96–2.25) | 3.99 (3.93–4.01) |
+| CPU per update minus idle rate, ms | 5.41 (5.09–5.56) | 1.60 (1.50–1.63) | 1.51 (1.50–1.59) | 1.41 (1.30–1.51) | 1.75 (1.68–1.91) |
+| CPU per update, main thread, ms | 4.62 (4.43–4.85) | 0.80 (0.77–0.85) | 0.79 (0.77–0.80) | 0.74 (0.70–0.76) | 2.58 (2.56–2.63) |
+| Idle 10 s: frames presented | 0 | 0 | 0 | 0 | 0 |
+| Idle 10 s: CPU, ms | 22.1 (19.9–27.5) | 23.3 (23.0–24.3) | 24.6 (20.3–24.8) | 23.0 (20.8–26.6) | 70.8 (63.9–73.8) |
+| Idle 10 s: main-thread wakeups | 0 | 0 | 0 | 0 | 1208 (1204–1209) |
+| Idle 10 s: wakeups, all threads | 1145 (1142–1146) | 1143 (1140–1145) | 1141 (1139–1144) | 1143 (1139–1146) | 2350 (2347–2353) |
+| RSS after idle / peak, MiB | 104 / 104 | 97 / 97 | 96 / 97 | 91 / 92 | 144 / 145 |
+| Resize → presented at the new size, ms (median step) | 13.5 (11.9–18.4) | 8.7 (8.0–11.5) | 7.5 (7.2–9.7) | 9.4 (7.1–9.7) | 11.7 (11.7–19.0) |
+
+#### Text grid (X11/XWayland)
+
+| N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | Idle CPU 10 s, ms | Idle main-thread wakeups | RSS, MiB |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 200 | Eco before | 6 | 320 (299–360) | 1.9 / 2.1 | 2.2 / 3.8 | 3.39 (3.25–3.64) / 2.01 (1.98–2.09) | 22 (20–25) | 0 | 99 |
+| 200 | Eco, text cache + first partial redraw | 3 | 310 (306–339) | 0.5 / 0.6 | 0.6 / 1.8 | 2.04 (1.73–2.04) / 0.56 (0.55–0.58) | 22 (22–22) | 0 | 93 |
+| 200 | Eco, finished partial redraw | 3 | 295 (265–304) | 0.5 / 0.6 | 0.6 / 1.9 | 2.08 (2.05–2.08) / 0.60 (0.59–0.60) | 23 (23–24) | 0 | 83 |
+| 200 | Eco, + atlas uploads in the frame | 3 | 283 (275–431) | 0.5 / 0.6 | 0.6 / 0.8 | 1.98 (1.96–2.15) / 0.56 (0.55–0.59) | 23 (22–25) | 0 | 87 |
+| 200 | GPUI | 3 | 444 (409–500) | 6.1 / 9.7 | 6.2 / 9.1 | 4.92 (4.78–4.96) / 3.53 (3.53–3.57) | 66 (64–75) | 1208 (1207–1222) | 146 |
+| 1000 | Eco before | 6 | 332 (297–378) | 6.9 / 8.6 | 7.2 / 9.8 | 8.23 (7.83–10.89) / 6.84 (6.53–9.08) | 21 (18–28) | 0 | 101 |
+| 1000 | Eco, text cache + first partial redraw | 3 | 271 (261–313) | 0.5 / 0.6 | 0.6 / 2.7 | 2.00 (1.99–2.07) / 0.60 (0.57–0.61) | 23 (22–24) | 0 | 95 |
+| 1000 | Eco, finished partial redraw | 2 | 306 (303–308) | 0.6 / 0.6 | 0.6 / 1.8 | 2.10 (2.08–2.11) / 0.61 (0.61–0.62) | 23 (21–24) | 0 | 90 |
+| 1000 | Eco, + atlas uploads in the frame | 3 | 274 (270–322) | 0.5 / 0.6 | 0.6 / 0.8 | 2.07 (1.94–2.19) / 0.57 (0.57–0.59) | 23 (22–24) | 0 | 91 |
+| 1000 | GPUI | 2 | 490 (442–538) | 11.0 / 14.7 | 11.5 / 14.5 | 10.27 (10.04–10.51) / 8.85 (8.51–9.19) | 72 (67–78) | 1212 (1209–1214) | 160 |
+| 5000 | Eco before | 5 | 483 (470–541) | 32.7 / 35.0 | 32.9 / 35.4 | 32.50 (32.24–33.88) / 31.20 (30.64–32.50) | 21 (20–23) | 0 | 117 |
+| 5000 | Eco, text cache + first partial redraw | 3 | 319 (313–327) | 0.5 / 0.6 | 0.6 / 1.7 | 1.94 (1.86–2.05) / 0.58 (0.56–0.60) | 21 (21–22) | 0 | 97 |
+| 5000 | Eco, finished partial redraw | 3 | 292 (281–311) | 0.5 / 0.6 | 0.6 / 1.8 | 2.03 (1.90–2.09) / 0.60 (0.58–0.61) | 23 (22–26) | 0 | 87 |
+| 5000 | Eco, + atlas uploads in the frame | 3 | 282 (270–324) | 0.5 / 0.6 | 0.6 / 0.8 | 1.87 (1.81–2.13) / 0.55 (0.55–0.58) | 20 (19–25) | 0 | 93 |
+| 5000 | GPUI | 2 | 521 (479–562) | 34.9 / 37.0 | 33.2 / 37.4 | 33.97 (33.85–34.10) / 32.50 (32.48–32.52) | 79 (75–83) | 1210 (1206–1214) | 215 |
+
+Reading the tables:
+
+- **Grid 5000:** an activation is presented 0.6 ms after the key (p90 0.8)
+  against 32.9 ms before and GPUI's 33.2; the main thread spends 0.55 ms
+  per update (31.2 before, GPUI 32.5). The frame draws the button and the
+  counter (21 quads) instead of about 20,000. The first frame records the
+  1,300 labels the window shows (5,226 quads); the 3,700 below it are not
+  painted at all, so startup fell from 483 to 282 ms and resident memory
+  from 117 to 93 MiB. Grids of 200 and 1000 labels cost the
+  same as 5000: the update no longer depends on the content that did not
+  change.
+- **Demo:** activation 0.8 ms, p90 1.0 (GPUI 5.3 / 8.5); key-down 0.6 ms
+  (GPUI 5.0). The p90 fell from 2.2 to 1.0 ms with the atlas uploads inside
+  the frame: Voltra's `update` waited for the device to go idle and then
+  for its own copy in every frame that showed a glyph for the first time
+  (the status line's digits), 1–4 ms in those frames by the program's log
+  (the previous section's observation).
+- **Idle:** unchanged, 0 frames and 0 main-thread wakeups in 10 s.
+- **Resize** (the demo's window resized by the compositor, each step drawn
+  whole): 9.4 ms median step (7.1–9.7 across sessions) against 13.5 before
+  and GPUI's 11.7; the earlier columns' 8.7 and 7.5 are within the same
+  spread.
+- The grid at 1000 labels has two sessions in the *finished partial
+  redraw* column: its third slot was discarded six times for pointer input
+  from the machine's user (`discarded-3-*`) and the batch gave up; the
+  last column has three.
+
+Sessions: three per configuration in `results/eco-*-x11-partial/` and
+`results/eco-*-x11-retained/`; `loaded-*` and `discarded-*` were rerun as above,
+and `early-*` are exploratory sessions of earlier builds of the same
+configurations, not used.
+
+Frame width (`WL_RESW`, see the finding above): the canvas made Voltra's
+GPU record 4 words wider (the grid's widest record went 51 → 55 words);
+boxing it brought the grid to 45. The demo's widest record is its model
+(104 words), which this work did not change.
+
+### What the profile shows now
+
+`tools/profile.py`, 10 activations of the final binaries, all threads
+(`perf`, user and kernel samples):
+
+| | CPU per activation (key-down + key-up) | Eco's code | NVIDIA driver (both threads) | Kernel | libc |
+| --- | --- | --- | --- | --- | --- |
+| Grid 5000 | 5.8 ms | 41% | 24% | 22% | 9% |
+| Demo | 6.5 ms | 48% | 26% | 11% | 10% |
+
+Presenting is now most of an update: the driver's own threads, the kernel
+(X11 and present system calls) and libc together are over half of the
+samples. Inside Eco's share the largest items are rasterizing glyphs the
+first time they show (Dithra, 7% of the grid's samples: the counter's
+digits), the runtime's memory release (`term_drop`, `span_fade`) and
+closure calls, recording and comparing the demo's parts every frame
+(`F.part`, 3%), and building and validating Voltra's command words every
+frame (about 3%).
+
 ## Where Eco stands, and what to do next
 
 What the numbers show:
@@ -518,8 +706,10 @@ measured):
    [After the text cache](#after-the-text-cache).*
 2. **Redraw less:** retain the unchanged part of the frame (damage regions)
    and drop draw-list operations outside the window. With 5000 labels the
-   ~33 ms per update is the full rebuild. *Done by another session (partial
-   redraw); measured together with the text cache.*
+   ~33 ms per update is the full rebuild. *Done: retained frames, culling,
+   damage-only redraws and incremental present; with 5000 labels an
+   activation is presented in 0.6 ms (was 32.9); see
+   [After partial redraw](#after-partial-redraw).*
 3. **Flat font bytes:** an array instead of Runika's byte tree, O(1) per
    byte read. *Done as a word tree (8x faster reads); arrays are affine and
    cannot live in a shared font; see [After the text cache](#after-the-text-cache).*
@@ -584,6 +774,20 @@ python3 tools/batch.py eco-demo-x11-final --runs 3              # build/bench/ec
 python3 tools/batch.py eco-grid200-x11-text eco-grid1000-x11-text eco-grid5000-x11-text --runs 3 --interleave
 ```
 
+The configurations [after partial redraw](#after-partial-redraw) run
+`build/bench/eco-partial` and `grid-partial` (Chromi 95d6274, Voltra
+c8baef5) and `build/bench/eco-retained` and `grid-retained` (Chromi a8dc71f,
+Voltra 1aed3ae); run each binary once first, so the driver's shader cache is
+warm:
+
+```sh
+python3 tools/batch.py eco-demo-x11-partial eco-grid200-x11-partial eco-grid1000-x11-partial \
+  eco-grid5000-x11-partial --runs 3 --interleave
+python3 tools/batch.py eco-demo-x11-retained eco-grid200-x11-retained eco-grid1000-x11-retained \
+  eco-grid5000-x11-retained --runs 3 --interleave
+cc -O2 -o /tmp/damage tools/damage.c -lX11 -lXdamage   # X damage of a window: damage TITLE SECONDS
+```
+
 `tools/batch.py` lists every configuration. Test windows open on workspace
 1, floating and unfocused, and close themselves.
 
@@ -598,6 +802,7 @@ python3 tools/batch.py eco-grid200-x11-text eco-grid1000-x11-text eco-grid5000-x
 | [tools/batch.py](tools/batch.py) | Configurations, repeated and interleaved sessions, discards. |
 | [tools/analyze.py](tools/analyze.py), [tools/report.py](tools/report.py) | Metrics per session and the published tables. |
 | [tools/xinput.py](tools/xinput.py) | Synthetic X11 input to one window. |
+| [tools/damage.c](tools/damage.c) | The X damage of one window, as rectangles (`cc -O2 -o tools/damage tools/damage.c -lX11 -lXdamage`). |
 | [tools/buildtime.py](tools/buildtime.py), [tools/versions.sh](tools/versions.sh) | Build timing and the environment record. |
 | [tools/profile.py](tools/profile.py) | `perf` over a configuration's updates or startup. |
 | [tools/cmap_equiv.bend](tools/cmap_equiv.bend) | The exhaustive check behind Runika `c2b4af9`. |

@@ -113,7 +113,10 @@ def main():
     for c in ("eco-demo-x11-asfound", "eco-demo-x11-fix1", "eco-grid200-x11-asfound", "eco-grid200-x11-fix1",
               "eco-grid1000-x11-asfound", "eco-grid1000-x11-fix1", "eco-grid5000-x11-asfound",
               "eco-grid5000-x11-fix1", "eco-demo-x11-redraw", "eco-demo-x11-text", "eco-demo-x11-final",
-              "eco-grid200-x11-text", "eco-grid1000-x11-text", "eco-grid5000-x11-text"):
+              "eco-grid200-x11-text", "eco-grid1000-x11-text", "eco-grid5000-x11-text", "eco-demo-x11-partial",
+              "eco-grid200-x11-partial", "eco-grid1000-x11-partial", "eco-grid5000-x11-partial",
+              "eco-demo-x11-retained", "eco-grid200-x11-retained", "eco-grid1000-x11-retained",
+              "eco-grid5000-x11-retained"):
         ms = sessions(results, c, ["[0-9]*"])
         if ms:
             report[c] = metrics(ms)
@@ -170,6 +173,42 @@ def main():
             print(f"| {label} | Resize → presented, ms | " +
                   " | ".join(f"{r['resize_ms']['median']:.1f}" for r in rs) + " |")
     after(report, rows)
+    partial(report, rows)
+
+
+def partial(report, rows):
+    """The section after the partial redraw was finished: Eco before, with
+    the text cache on the first partial redraw, with the finished partial
+    redraw (and the text cache), and GPUI."""
+    if "eco-demo-x11-partial" not in report:
+        return
+    cols = [("eco-demo-x11", "Eco before (Runika c2b4af9)"),
+            ("eco-demo-x11-text", "Eco, text cache + first partial redraw"),
+            ("eco-demo-x11-partial", "Eco, finished partial redraw + text cache"),
+            ("eco-demo-x11-retained", "Eco, + atlas uploads in the frame"), ("gpui-demo-x11", "GPUI")]
+    cols = [(c, label) for c, label in cols if c in report]
+    print("\n### After partial redraw: demo scene (X11/XWayland, FIFO, 900x560)\n")
+    print("| Metric | " + " | ".join(label for c, label in cols) + " |")
+    print("| --- |" + " --- |" * len(cols))
+    for name, fn in rows:
+        print(f"| {name} | " + " | ".join(fn(report[c]) for c, label in cols) + " |")
+    print("\n### After partial redraw: text grid (X11/XWayland)\n")
+    print("| N | Build | Sessions | Startup, ms | Key-down → presented, ms (median / p90) | "
+          "Activation → presented, ms (median / p90) | CPU per update, all threads / main, ms | "
+          "Idle CPU 10 s, ms | Idle main-thread wakeups | RSS, MiB |")
+    print("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for n in (200, 1000, 5000):
+        for c, label in ((f"eco-grid{n}-x11", "Eco before"), (f"eco-grid{n}-x11-text", "Eco, text cache + first partial redraw"),
+                         (f"eco-grid{n}-x11-partial", "Eco, finished partial redraw"),
+                         (f"eco-grid{n}-x11-retained", "Eco, + atlas uploads in the frame"),
+                         (f"gpui-grid{n}-x11", "GPUI")):
+            r = report.get(c)
+            if not r:
+                continue
+            print(f"| {n} | {label} | {len(r['sessions'])} | {f(r['startup_ms'], 0)} | "
+                  f"{lat(r, 'down')} | {lat(r, 'up')} | "
+                  f"{f(r['cpu_ms_per_update'], 2)} / {f(r['main_cpu_ms_per_update'], 2)} | "
+                  f"{f(r['idle_cpu_ms'], 0)} | {f(r['idle_main_wakeups'], 0)} | {r['rss_mib']['median']:.0f} |")
 
 
 def after(report, rows):

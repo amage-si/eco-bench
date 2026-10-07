@@ -51,6 +51,13 @@ CONFIGS = {
     "eco-demo-x11-redraw": eco("./build/bench/eco-redraw", [], ECO_DEMO_TITLE, resize=True),
     # eco-text plus Runika 131874b (the font's tree built in one pass).
     "eco-demo-x11-final": eco("./build/bench/eco-final", [], ECO_DEMO_TITLE, resize=True),
+    # After the partial redraw was finished (present regions, boxed GPU
+    # record, the demo's status-only relayout; Voltra c8baef5, Chromi
+    # 95d6274), with the text cache.
+    "eco-demo-x11-partial": eco("./build/bench/eco-partial", [], ECO_DEMO_TITLE, resize=True),
+    # The same, with atlas uploads recorded inside the frame (Voltra 1aed3ae,
+    # Chromi a8dc71f) and Runika 131874b.
+    "eco-demo-x11-retained": eco("./build/bench/eco-retained", [], ECO_DEMO_TITLE, resize=True),
     "gpui-demo-x11": gpui(["demo"], "GPUI bench - demo", resize=True),
     "gpui-demo-x11-xim": gpui(["demo"], "GPUI bench - demo", mode="x11-xim", resize=True),
     "gpui-demo-x11-auto": gpui(["demo"], "GPUI bench - demo", update="auto", resize=True),
@@ -61,6 +68,8 @@ for n in (200, 1000, 5000):
     CONFIGS[f"eco-grid{n}-x11-asfound"] = eco("./build/bench/grid-asfound", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-fix1"] = eco("./build/bench/grid-fix1", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-text"] = eco("./build/bench/grid-text", [str(n)], f"AMAGE Eco - grid {n}")
+    CONFIGS[f"eco-grid{n}-x11-partial"] = eco("./build/bench/grid-partial", [str(n)], f"AMAGE Eco - grid {n}")
+    CONFIGS[f"eco-grid{n}-x11-retained"] = eco("./build/bench/grid-retained", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", update="auto")
     CONFIGS[f"gpui-grid{n}-wayland-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", mode="wayland",

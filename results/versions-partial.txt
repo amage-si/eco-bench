@@ -1,0 +1,17 @@
+date: 2026-10-07T00:37:46-03:00
+kernel: 7.2.5-3-omarchy
+hyprland: Hyprland 0.56.2 built from branch v0.56.2 at commit efb50993780079460b0cbed1363e2166a2de1d9f clean ([gha] Nix: update inputs).
+xwayland: xorg-xwayland 24.1.13-1
+gpu: NVIDIA GeForce RTX 3050 Laptop GPU, driver 610.57.04, vulkan loader 1.4.357.0-1
+cpu: AMD Ryzen 7 5800H with Radeon Graphics, 16 threads
+memory: 31 GiB
+bend: bend 2.0.35
+clang: clang version 22.1.8
+rustc: rustc 1.99.0 (b940084d7 2026-09-28)
+cargo: cargo 1.99.0 (5f94df478 2026-08-27)
+gpui: zeronsh/zui c2d273dc3dadcb260b0fa7c35fc2fe02a14f5add
+wgpu: 29.0.4
+# binaries of the partial-redraw round (built 2026-10-06/07; later commits are documentation only):
+eco-partial, grid-partial (~23:45): Ankra c3a8c94, Chromi 95d6274, Dithra 30930b5, Kairo 7d87a92, Mokko 1935d1d, Ocula f44281d, Runika c651a8d, Splina a8ab0e3, Syllo 484d2b7, Tessra f40c025, Voltra c8baef5
+eco-retained, grid-retained (~00:19; recorded as eco-final and grid-final in their sessions): Ankra c3a8c94, Chromi a8dc71f, Dithra 30930b5, Kairo 7d87a92, Mokko 1935d1d, Ocula f44281d, Runika 131874b, Splina a8ab0e3, Syllo 51b948a, Tessra f40c025, Voltra 1aed3ae
+damage experiment (grid 1000, ~23:41): Chromi 95d6274 code, Voltra c8baef5 with device_flags 0 (without regions) and 1 (with regions)
