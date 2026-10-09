@@ -1,0 +1,12 @@
+Startup round baseline (eco-fast0 / grid-fast0), built 2026-10-09 with build/eco (dev -O3, fork, flat-max 32)
+Ankra 4a6d273
+Chromi b1a03b0
+Dithra 7bb83a8
+Kairo 6dd9f12
+Mokko 4df1cce
+Ocula e4555c2
+Runika 5145495
+Splina 9868833
+Syllo a004a0c
+Tessra 01a055b
+Voltra 50c0e05

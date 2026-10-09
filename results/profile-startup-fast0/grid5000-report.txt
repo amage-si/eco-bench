@@ -1,0 +1,109 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 726  of event 'cpu/cycles/Pu'
+# Event count (approx.): 275048997
+#
+# Overhead  Shared Object                     Symbol                                               IPC   [IPC Coverage]
+# ........  ................................  ...................................................  ....................
+#
+     7.95%  grid-fast0                        [.] term_drop                                        -      -            
+     3.53%  grid-fast0                        [.] span_fade                                        -      -            
+     3.37%  grid-fast0                        [.] term_drop                                        -      -            
+     2.84%  grid-fast0                        [.] WL_FID__________RUNIKA_BYTES_LEAVES              -      -            
+     2.32%  grid-fast0                        [.] term_drop                                        -      -            
+     2.05%  grid-fast0                        [.] rfc_wrap                                         -      -            
+     1.35%  grid-fast0                        [.] WL_FID__________RUNIKA_FONT_INFO                 -      -            
+     1.32%  grid-fast0                        [.] term_drop                                        -      -            
+     1.27%  [unknown]                         [k] 0xffffffffb7201280                               -      -            
+     1.18%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd7ac                               -      -            
+     1.00%  grid-fast0                        [.] term_drop                                        -      -            
+     0.92%  grid-fast0                        [.] WL_FID_CLO_APPLY                                 -      -            
+     0.85%  libnvidia-glcore.so.610.57.04     [.] 0x00000000005b212d                               -      -            
+     0.84%  grid-fast0                        [.] span_fade                                        -      -            
+     0.83%  libc.so.6                         [.] 0x00000000001791a1                               -      -            
+     0.76%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd79a                               -      -            
+     0.72%  grid-fast0                        [.] WL_FID__________RUNIKA_BYTES_PAIRS_k0            -      -            
+     0.71%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd7a1                               -      -            
+     0.69%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd793                               -      -            
+     0.68%  grid-fast0                        [.] span_fade                                        -      -            
+     0.67%  grid-fast0                        [.] WL_FID_TEXT_PREPARE_k3                           -      -            
+     0.67%  grid-fast0                        [.] WL_FID_TEXT_PLACED                               -      -            
+     0.67%  grid-fast0                        [.] WL_FID__________SYLLO_MAIN_SHAPE_k1              -      -            
+     0.67%  grid-fast0                        [.] WL_FID_TEXT_REMEMBER                             -      -            
+     0.67%  grid-fast0                        [.] term_drop                                        -      -            
+     0.66%  grid-fast0                        [.] WL_FID__________VOLTRA_KEYS_PUT_GO               -      -            
+     0.64%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000312fe2d                               -      -            
+     0.61%  grid-fast0                        [.] WL_FID_FRAME_c4                                  -      -            
+     0.59%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af68                               -      -            
+     0.57%  libnvidia-glcore.so.610.57.04     [.] 0x000000000105403d                               -      -            
+     0.55%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af7a                               -      -            
+     0.54%  grid-fast0                        [.] WL_FID_______GPU_TEXTURED                        -      -            
+     0.51%  [unknown]                         [k] 0xffffffffb754536b                               -      -            
+     0.45%  grid-fast0                        [.] WL_FID__________RUNIKA_BYTES_PAIRS               -      -            
+     0.43%  libc.so.6                         [.] malloc                                           -      -            
+     0.43%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000025ac6ac                               -      -            
+     0.41%  libc.so.6                         [.] 0x00000000000a79dd                               -      -            
+     0.37%  libnvidia-glvkspirv.so.610.57.04  [.] 0x0000000000426582                               -      -            
+     0.35%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000e2b6fb                               -      -            
+     0.35%  libc.so.6                         [.] 0x00000000000a4ffe                               -      -            
+     0.34%  grid-fast0                        [.] heap_alloc_miss                                  -      -            
+     0.34%  ld-linux-x86-64.so.2              [.] 0x000000000001727e                               -      -            
+     0.34%  grid-fast0                        [.] WL_FID_STRING_APPEND_k0                          -      -            
+     0.34%  grid-fast0                        [.] WL_FID__________VOLTRA_KEYS_PUT_GO_k1            -      -            
+     0.34%  libc.so.6                         [.] __strtok_r                                       -      -            
+     0.34%  grid-fast0                        [.] WL_FID_RESULT_BIND                               -      -            
+     0.34%  grid-fast0                        [.] WL_FID_CELLS_GO_k4                               -      -            
+     0.34%  grid-fast0                        [.] WL_FID_TEXT_FIND                                 -      -            
+     0.34%  grid-fast0                        [.] WL_FID__________VOLTRA_KEYS_PUT                  -      -            
+     0.34%  grid-fast0                        [.] WL_FID_TEXT_GOT                                  -      -            
+     0.34%  grid-fast0                        [.] WL_FID__________SYLLO_UNICODE_ACCEPT_WITHIN_c2   -      -            
+     0.34%  grid-fast0                        [.] rfc_wrap                                         -      -            
+     0.34%  grid-fast0                        [.] WL_FID_CELLS_GO_k0                               -      -            
+     0.33%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000004808935                               -      -            
+     0.33%  ld-linux-x86-64.so.2              [.] 0x00000000000105b3                               -      -            
+     0.33%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000019a8abf                               -      -            
+     0.33%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003159075                               -      -            
+     0.33%  libnvidia-glvkspirv.so.610.57.04  [.] 0x00000000002f0200                               -      -            
+     0.33%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000155cbbe                               -      -            
+     0.33%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000161c524                               -      -            
+     0.33%  grid-fast0                        [.] WL_FID_CELLS_GO_k1                               -      -            
+     0.33%  grid-fast0                        [.] WL_FID__________SYLLO_UNICODE_NORMALIZE_GO       -      -            
+     0.33%  libnvidia-glvkspirv.so.610.57.04  [.] 0x00000000003a2a20                               -      -            
+     0.33%  libnvidia-glvkspirv.so.610.57.04  [.] 0x00000000003139d4                               -      -            
+     0.32%  grid-fast0                        [.] rfc_wrap                                         -      -            
+     0.32%  libnvidia-glvkspirv.so.610.57.04  [.] 0x0000000000193462                               -      -            
+     0.32%  grid-fast0                        [.] WL_FID_TEXT_PREPARE                              -      -            
+     0.32%  libc.so.6                         [.] 0x00000000000a6208                               -      -            
+     0.32%  libc.so.6                         [.] 0x00000000000a4f23                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003212419                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003247da6                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003210775                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000031310ed                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003294424                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003292916                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000329818e                               -      -            
+     0.32%  libnvidia-glcore.so.610.57.04     [.] 0x00000000005b2494                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000410acba                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000040a72c3                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000320f703                               -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000031329ed                               -      -            
+     0.31%  grid-fast0                        [.] WL_FID__________VOLTRA_GPU_OPEN_c58              -      -            
+     0.31%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000419f521                               -      -            
+     0.31%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000550e5a                               -      -            
+     0.31%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003286faa                               -      -            
+     0.31%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fb735b                               -      -            
+     0.30%  grid-fast0                        [.] rfc_wrap                                         -      -            
+     0.30%  grid-fast0                        [.] WL_FID__________RUNIKA_GLYF_TRANSFORM_POINTS_k0  -      -            
+     0.30%  [unknown]                         [k] 0xffffffffb786c0c4                               -      -            
+     0.30%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000042ad3d3                               -      -            
+     0.30%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003218cbf                               -      -            
+     0.30%  grid-fast0                        [.] WL_FID__________SPLINA_PATH_SEGMENTS_k0          -      -            
+     0.30%  libnvidia-gpucomp.so.610.57.04    [.] 0x0000000003130feb                               -      -            
+
+
+#
+# (Tip: To analyze cache line scalability issues use perf c2c record ... ; perf c2c report)
+#

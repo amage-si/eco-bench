@@ -22,6 +22,12 @@ was finished; the tables before those sections are kept as first measured.
 
 ## Summary
 
+After the fast decoders ([details](#after-the-fast-decoders); 2026-10-09,
+startup only, sessions under load): the demo starts in 285–300 ms. Under the
+same load the previous build took 540–548 ms, and GPUI took 481 ms in earlier quiet
+sessions. Assets now take 13–20 ms. The rest of startup is window and
+Vulkan setup.
+
 After the partial redraw was finished ([details](#after-partial-redraw);
 medians, X11, the text cache included): with 5000 labels an activation is
 presented 0.6 ms after the key (p90 0.8; GPUI 33.2 / 37.4) with 0.55 ms of
@@ -678,6 +684,90 @@ closure calls, recording and comparing the demo's parts every frame
 (`F.part`, 3%), and building and validating Voltra's command words every
 frame (about 3%).
 
+## After the fast decoders
+
+**Status (2026-10-09):** a startup baseline after Ocula's PNG decoder got
+~20x faster (kitty.png 49 → ~2 ms, Ocula up to
+[e4555c2](https://github.com/amage-si/ocula/commit/e4555c2)) and Dithra's
+glyph rasterizer ~16x faster (70.5 → 4.35 µs per 16 px glyph,
+[6a45456](https://github.com/amage-si/dithra/commit/6a45456)). This answers
+pending item 5 below ("profile startup"). No other code changed. Revisions are in
+[results/versions-fast0.txt](results/versions-fast0.txt); binaries
+`build/bench/eco-fast0` and `grid-fast0` (`eco build demo grid`, dev -O3),
+configurations `eco-demo-x11-fast0` and `eco-grid5000-x11-fast0`.
+
+### Sessions and how far to trust them
+
+The machine was not quiet. Two unrelated `python3` processes kept one core
+busy each for the whole morning, so other processes used 310–690% CPU in
+every session. `session.py`'s quiet wait (150%) could never be met, so these
+sessions ran with `--quiet-pct 5000`. The machine's user also moved the
+pointer over every test window during the update phase. **Only startup is
+reported:** in every session the first frame was presented before any
+foreign input arrived (the program's log shows `redraw 1` before
+`moved`/`focus-in`/`enter`). The update, idle and resize metrics of these
+sessions are not used. To measure under the same load, the previous final
+demo (`eco-retained`, Ocula and Dithra before the rewrites; 493 ms in a quiet
+session) ran interleaved with the new one. The session directories are
+`pointer-*` in `results/eco-demo-x11-fast0/`,
+`results/eco-grid5000-x11-fast0/` and `results/eco-demo-x11-retained/pointer-fast0-*`.
+`loaded-1-*` is a first session that waited out the quiet limit (startup
+393 ms, others at 444–689%).
+
+| Startup, ms (launch → first presented frame) | Session 1 | Session 2 | Assets (program log) | Window + GPU (program log) |
+| --- | --- | --- | --- | --- |
+| Demo, `eco-fast0` | 300 | 285 | 20, 13 | 274, 267 |
+| Demo, `eco-retained` (previous final; same load, interleaved) | 540 | 548 | 242, 267 | 290, 276 |
+| Grid 5000, `grid-fast0` | 302 | 291 | 27, 30 | 268, 256 |
+
+- **The demo now starts in ~290 ms, against ~545 ms for the previous build under the same load**,
+  and 493–526 ms in earlier quiet sessions. GPUI's 481 ms (429–488, quiet sessions of
+  2026-10-06; not rerun) is now ~190 ms slower than Eco. The whole gain is the asset phase.
+  Font, PNG, SVG, text and layout took 13–20 ms, against 242–267 ms.
+- Grid 5000 is unchanged at 291–302 ms (282 before). It decodes no PNG, and its
+  28 glyphs were already cheap.
+- Startup is now Ankra's window plus Voltra's Vulkan setup: 256–290 ms of
+  the ~290 ms, in every build and both programs.
+
+### Where startup goes now (profile)
+
+`tools/profile.py --startup` (perf at 4000 Hz, all threads, from exec to
+exit). Each run was preceded by one run of the same binary, so the driver's
+shader cache was warm. Samples are binned by time since exec. Reports are in
+`results/profile-startup-fast0/`.
+
+| Phase (demo, warm) | Wall | CPU samples (≈ ms) | Where |
+| --- | --- | --- | --- |
+| 0–40 ms: runtime start, assets | ~40 ms | 174 (≈ 44 ms over threads) | Eco 76 samples (≈ 19 ms), kernel 51 (page faults, file read), driver loading 20 |
+| 40–300 ms: window and Vulkan setup | ~260 ms | 197 (≈ 49 ms) | NVIDIA libraries 84, kernel 53, libc 43: the CPU is idle about 80% of this phase |
+| 300–320 ms: first frame | ~20 ms | 49 | Eco 19 (scene, atlas, quads), driver 15 |
+
+Inside the asset phase's Eco samples, Runika (font tree, `glyf` outlines)
+accounts for 31, the runtime's memory release, allocation and closures for 25, Ocula
+(inflate, rows) for 11, and Chromi's pixel list checks (`data_valid`, list
+appends) for ~5 (≈ 1–2 ms). Dithra's rasterizer does not show (93 glyphs × 4.35 µs ≈
+0.4 ms). The cold first run of a new binary spent another ~50 ms in
+`libnvidia-gpucomp` compiling the pipeline (25% of its samples). The grid's
+first warm run looked the same: Eco 109 samples in the first 40 ms (the
+5000 labels), then the same mostly idle window/Vulkan phase.
+
+What this means for the next steps:
+
+- The Bend side of startup is now ~20 ms of ~290. Passing Ocula's pixels to
+  Chromi as an array instead of a list could save at most the ~1–2 ms of
+  list checks. Rasterizing missing glyphs in parallel could save at most
+  part of ~0.4 ms of rasterizing plus the outline parsing. Neither is worth doing for
+  startup. Their value would be structural (the pixel path) or a first
+  experience with parallel calls.
+- The ~260 ms of window and Vulkan setup is where startup is now. It is
+  mostly waiting, not computing, and it was not broken down further here.
+  Candidates, unmeasured: instance and device creation, swapchain creation,
+  the window's map round trip through the compositor, pipeline creation
+  against the cache. Each could be timed by printing timestamps around
+  `A.open`, `Gpu.open` and Voltra's setup steps. Ankra's window and Voltra's
+  device could also be opened while the assets load, but the assets now
+  take ~20 ms, so this would save little.
+
 ## Where Eco stands, and what to do next
 
 What the numbers show:
@@ -716,7 +806,10 @@ measured):
 4. **Incremental Bend builds** (toolchain): the largest cost in a day of
    work, 85–93 s per change against 2–4 s.
 5. **Profile startup:** Eco's demo starts 56 ms after GPUI's; PNG decoding
-   (Ocula) and SVG rasterization in Bend are the suspects.
+   (Ocula) and SVG rasterization in Bend are the suspects. *Done: after
+   Ocula's and Dithra's rewrites the assets take 13–20 ms and the demo starts
+   in ~290 ms. What remains is window and Vulkan setup, ~260 ms and mostly
+   waiting. See [After the fast decoders](#after-the-fast-decoders).*
 
 ## Caveats
 

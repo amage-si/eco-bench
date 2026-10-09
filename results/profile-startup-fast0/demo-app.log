@@ -1,0 +1,15 @@
+launch_mono_ns 304293304197490
+assets ready in 21 ms: font, PNG (Ocula), SVG (Splina + Dithra), text, layout
+GPU 0: NVIDIA GeForce RTX 3050 Laptop GPU (discrete, vendor 4318, device 9698, Vulkan 1.4.341, 4096 MiB device-local, max image 32768)
+queue family 0, swapchain 900x560, format 44, 4 images, retained canvas, 2 frames in flight, validation layer off (not installed)
+window and GPU ready in 290 ms
+redraw 1 at 316 ms: scene + GPU 5 ms, whole, 235 quads, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: mapped expose
+redraw 2 at 317 ms: scene + GPU 0 ms, damage only, 0 quads, 93 glyphs cached, atlas 91 entries, 84131 texels uploaded
+input: close
+frames presented: 2, redraws: 2, clicks: 0
+teardown: 0 native objects left; driver messages: 0 warnings, 0 errors
+window objects left: 0
+[ perf record: Woken up 2 times to write data ]
+[ perf record: Captured and wrote 0.049 MB /tmp/ecofast/prof-demo-fast0b/perf.data (514 samples) ]
+exit=0

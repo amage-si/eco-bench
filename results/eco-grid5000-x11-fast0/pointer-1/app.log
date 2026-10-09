@@ -1,0 +1,1014 @@
+launch_mono_ns 305496842436090
+assets ready in 27 ms: font, 5000 labels, 28 glyphs
+GPU 0: NVIDIA GeForce RTX 3050 Laptop GPU (discrete, vendor 4318, device 9698, Vulkan 1.4.341, 4096 MiB device-local, max image 32768)
+queue family 0, swapchain 900x560, format 44, 4 images, retained canvas, 2 frames in flight, validation layer off (not installed)
+window and GPU ready in 268 ms
+redraw 1 at 301 ms: scene + GPU 6 ms, whole, 5226 quads, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: mapped expose
+redraw 2 at 301 ms: scene + GPU 0 ms, damage only, 0 quads, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: moved
+input: focus-in
+input: key-down 9
+redraw 3 at 12654 ms: scene + GPU 1 ms, damage only, 9 quads, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: key-up 9
+input: key-down 32
+redraw 4 at 13335 ms: scene + GPU 1 ms, damage only, 9 quads, 28 glyphs cached, atlas 27 entries, 1870 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 5 at 13636 ms: scene + GPU 0 ms, damage only, 21 quads, 29 glyphs cached, atlas 28 entries, 1966 texels uploaded
+input: key-down 32
+redraw 6 at 13940 ms: scene + GPU 0 ms, damage only, 9 quads, 29 glyphs cached, atlas 28 entries, 1966 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 7 at 14245 ms: scene + GPU 1 ms, damage only, 21 quads, 30 glyphs cached, atlas 29 entries, 2074 texels uploaded
+input: key-down 32
+redraw 8 at 14552 ms: scene + GPU 0 ms, damage only, 9 quads, 30 glyphs cached, atlas 29 entries, 2074 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 9 at 14853 ms: scene + GPU 0 ms, damage only, 21 quads, 31 glyphs cached, atlas 30 entries, 2191 texels uploaded
+input: key-down 32
+redraw 10 at 15155 ms: scene + GPU 0 ms, damage only, 9 quads, 31 glyphs cached, atlas 30 entries, 2191 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 11 at 15460 ms: scene + GPU 0 ms, damage only, 21 quads, 32 glyphs cached, atlas 31 entries, 2299 texels uploaded
+input: key-down 32
+redraw 12 at 15765 ms: scene + GPU 0 ms, damage only, 9 quads, 32 glyphs cached, atlas 31 entries, 2299 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 13 at 16072 ms: scene + GPU 0 ms, damage only, 21 quads, 33 glyphs cached, atlas 32 entries, 2416 texels uploaded
+input: key-down 32
+redraw 14 at 16377 ms: scene + GPU 1 ms, damage only, 9 quads, 33 glyphs cached, atlas 32 entries, 2416 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 15 at 16683 ms: scene + GPU 0 ms, damage only, 21 quads, 34 glyphs cached, atlas 33 entries, 2533 texels uploaded
+input: key-down 32
+redraw 16 at 16989 ms: scene + GPU 0 ms, damage only, 9 quads, 34 glyphs cached, atlas 33 entries, 2533 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 17 at 17296 ms: scene + GPU 0 ms, damage only, 21 quads, 35 glyphs cached, atlas 34 entries, 2641 texels uploaded
+input: key-down 32
+redraw 18 at 17601 ms: scene + GPU 0 ms, damage only, 9 quads, 35 glyphs cached, atlas 34 entries, 2641 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 19 at 17903 ms: scene + GPU 0 ms, damage only, 21 quads, 36 glyphs cached, atlas 35 entries, 2758 texels uploaded
+input: key-down 32
+redraw 20 at 18208 ms: scene + GPU 0 ms, damage only, 9 quads, 36 glyphs cached, atlas 35 entries, 2758 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 21 at 18510 ms: scene + GPU 0 ms, damage only, 21 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 22 at 18817 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 23 at 19121 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 24 at 19428 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 25 at 19734 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 26 at 20040 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 27 at 20342 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 28 at 20644 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 29 at 20952 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 30 at 21260 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 31 at 21567 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 32 at 21875 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 33 at 22180 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 34 at 22481 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 35 at 22784 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 36 at 23088 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 37 at 23391 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 38 at 23695 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 39 at 24003 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 40 at 24309 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 41 at 24614 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 42 at 24914 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 43 at 25220 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 44 at 25523 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 45 at 25827 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 46 at 26131 ms: scene + GPU 1 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 47 at 26436 ms: scene + GPU 1 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-down 32
+redraw 48 at 26740 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: key-up 32 -> 1 activation(s)
+redraw 49 at 27041 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: enter move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: key-down 65591
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: moved
+input: move moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: key-down 32
+redraw 50 at 27345 ms: scene + GPU 0 ms, damage only, 9 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: moved move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: move
+input: moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: move moved moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: move moved
+input: move moved
+input: moved move moved move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved move
+input: moved
+input: move
+input: move
+input: moved moved
+input: moved moved
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: leave moved
+input: enter move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved move
+input: moved
+input: move
+input: moved move
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved move
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved moved move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: moved
+input: moved moved
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: moved
+input: move
+input: move moved
+input: moved
+input: move
+input: moved
+input: move
+input: move
+input: move
+input: move
+input: key-up 32 -> 1 activation(s)
+redraw 51 at 27652 ms: scene + GPU 0 ms, damage only, 22 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: key-up 65591
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: move
+input: focus-out
+redraw 52 at 27778 ms: scene + GPU 1 ms, damage only, 8 quads, 37 glyphs cached, atlas 36 entries, 2875 texels uploaded
+input: leave
+input: key-down 32
+input: key-up 32
+input: key-down 32
+input: key-up 32
+input: key-down 32
+input: key-up 32
+input: key-down 32
+input: key-up 32
+input: key-down 32
+input: key-up 32
+input: key-down 32
+input: key-up 32
+input: close
+frames presented: 52, redraws: 52, clicks: 24
+teardown: 0 native objects left; driver messages: 0 warnings, 0 errors
+window objects left: 0
+exit=0

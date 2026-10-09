@@ -1,0 +1,100 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 514  of event 'cpu/cycles/Pu'
+# Event count (approx.): 145687301
+#
+# Overhead  Shared Object                     Symbol                                               IPC   [IPC Coverage]
+# ........  ................................  ...................................................  ....................
+#
+    10.54%  eco-fast0                         [.] term_drop                                        -      -            
+     4.19%  eco-fast0                         [.] WL_FID__________RUNIKA_BYTES_LEAVES              -      -            
+     2.10%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd793                               -      -            
+     2.09%  eco-fast0                         [.] rfc_wrap                                         -      -            
+     1.68%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd79a                               -      -            
+     1.63%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af7a                               -      -            
+     1.57%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af78                               -      -            
+     1.53%  eco-fast0                         [.] WL_FID_CLO_APPLY                                 -      -            
+     1.42%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd7aa                               -      -            
+     1.34%  eco-fast0                         [.] WL_FID__________RUNIKA_GLYF_READ_FLAG            -      -            
+     1.31%  eco-fast0                         [.] WL_FID__________RUNIKA_GLYF_POINTS               -      -            
+     1.30%  eco-fast0                         [.] span_fade                                        -      -            
+     1.29%  eco-fast0                         [.] span_fade                                        -      -            
+     1.28%  eco-fast0                         [.] term_drop                                        -      -            
+     1.21%  eco-fast0                         [.] WL_FID__________RUNIKA_GLYF_COORDINATE           -      -            
+     1.15%  eco-fast0                         [.] WL_FID__________OCULA_PIXELS_ROW_c2              -      -            
+     1.15%  eco-fast0                         [.] WL_FID_LIST_LENGTH_k0                            -      -            
+     1.12%  eco-fast0                         [.] spin_593d4bed4e2ad39c                            -      -            
+     1.12%  eco-fast0                         [.] WL_FID_MEDIA_PNG_c5                              -      -            
+     1.08%  eco-fast0                         [.] WL_FID__________VOLTRA_WORDS_TO_ARRAY_k0         -      -            
+     1.08%  eco-fast0                         [.] WL_FID__________RUNIKA_GLYF_OUTLINE_k0           -      -            
+     1.03%  eco-fast0                         [.] WL_FID_______SCENE_DATA_VALID                    -      -            
+     1.02%  [unknown]                         [k] 0xffffffffb7201280                               -      -            
+     1.01%  eco-fast0                         [.] rfc_wrap                                         -      -            
+     0.98%  ld-linux-x86-64.so.2              [.] 0x000000000000babe                               -      -            
+     0.93%  eco-fast0                         [.] WL_FID__________RUNIKA_BYTES_PAIRS_k0            -      -            
+     0.93%  [unknown]                         [k] 0xffffffffb7a453fe                               -      -            
+     0.93%  [unknown]                         [k] 0xffffffffb7a4540c                               -      -            
+     0.89%  libGLX_nvidia.so.610.57.04        [.] 0x0000000000083204                               -      -            
+     0.86%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd7ac                               -      -            
+     0.86%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000a5a67f                               -      -            
+     0.85%  eco-fast0                         [.] WL_FID__________RUNIKA_BYTES_PAIRS               -      -            
+     0.83%  libc.so.6                         [.] getenv                                           -      -            
+     0.82%  eco-fast0                         [.] WL_FID__________OCULA_INFLATE_COMPRESSED_k1      -      -            
+     0.79%  libnvidia-glcore.so.610.57.04     [.] 0x000000000105403d                               -      -            
+     0.75%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000e92709                               -      -            
+     0.73%  eco-fast0                         [.] WL_FID__________RUNIKA_BYTES_LEAVES_k0           -      -            
+     0.71%  libX11.so.6.4.0                   [.] XGetVisualInfo                                   -      -            
+     0.67%  eco-fast0                         [.] WL_FID__________VOLTRA_GPU_RELEASE               -      -            
+     0.57%  [unknown]                         [k] 0xffffffffb8828e6a                               -      -            
+     0.57%  libc.so.6                         [.] 0x00000000000a4f77                               -      -            
+     0.57%  [unknown]                         [k] 0xffffffffb7a19ed9                               -      -            
+     0.56%  libc.so.6                         [.] 0x00000000000a7606                               -      -            
+     0.56%  libc.so.6                         [.] 0x00000000000a4f3b                               -      -            
+     0.55%  eco-fast0                         [.] rfc_wrap                                         -      -            
+     0.55%  eco-fast0                         [.] WL_FID_LIST_APPEND                               -      -            
+     0.53%  ld-linux-x86-64.so.2              [.] 0x000000000000ad33                               -      -            
+     0.53%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000adf095                               -      -            
+     0.53%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af6f                               -      -            
+     0.52%  eco-fast0                         [.] WL_FID__________OCULA_INFLATE_INFLATE_PARTS_c2   -      -            
+     0.52%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af7f                               -      -            
+     0.52%  [unknown]                         [k] 0xffffffffb7554564                               -      -            
+     0.49%  [unknown]                         [k] 0xffffffffb7914fa7                               -      -            
+     0.49%  libnvidia-glsi.so.610.57.04       [.] 0x000000000006af68                               -      -            
+     0.46%  libc.so.6                         [.] 0x0000000000179266                               -      -            
+     0.45%  ld-linux-x86-64.so.2              [.] 0x000000000002a68c                               -      -            
+     0.45%  eco-fast0                         [.] file_read_bytes_pack                             -      -            
+     0.43%  ld-linux-x86-64.so.2              [.] 0x000000000000ad72                               -      -            
+     0.43%  libc.so.6                         [.] 0x0000000000195cd8                               -      -            
+     0.39%  libnvidia-gpucomp.so.610.57.04    [.] 0x00000000019dd398                               -      -            
+     0.39%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000fcd9d3                               -      -            
+     0.38%  libc.so.6                         [.] 0x0000000000195c6f                               -      -            
+     0.38%  ld-linux-x86-64.so.2              [.] 0x000000000000af84                               -      -            
+     0.38%  eco-fast0                         [.] WL_FID_LIST_APPEND_k0                            -      -            
+     0.36%  libvulkan.so.1.4.357              [.] 0x000000000001f59e                               -      -            
+     0.35%  ld-linux-x86-64.so.2              [.] 0x000000000000b264                               -      -            
+     0.35%  [unknown]                         [k] 0xffffffffb790d74d                               -      -            
+     0.35%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000a04cab                               -      -            
+     0.35%  [unknown]                         [k] 0xffffffffb7a085b8                               -      -            
+     0.35%  [unknown]                         [k] 0xffffffffb881fbff                               -      -            
+     0.34%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000a6ed67                               -      -            
+     0.34%  libGLX_nvidia.so.610.57.04        [.] 0x00000000000a2586                               -      -            
+     0.33%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000531007                               -      -            
+     0.33%  [unknown]                         [k] 0xffffffffb7914f5a                               -      -            
+     0.33%  [unknown]                         [k] 0xffffffffb72000ce                               -      -            
+     0.33%  eco-fast0                         [.] term_drop                                        -      -            
+     0.32%  ld-linux-x86-64.so.2              [.] 0x0000000000016cec                               -      -            
+     0.32%  libnvidia-glcore.so.610.57.04     [.] 0x0000000000a0dae7                               -      -            
+     0.32%  [unknown]                         [k] 0xffffffffb7929154                               -      -            
+     0.32%  ld-linux-x86-64.so.2              [.] 0x00000000000292fb                               -      -            
+     0.32%  eco-fast0                         [.] span_fade                                        -      -            
+     0.32%  libnvidia-gpucomp.so.610.57.04    [.] 0x000000000050344a                               -      -            
+     0.31%  libc.so.6                         [.] 0x0000000000178a0b                               -      -            
+     0.31%  libc.so.6                         [.] 0x0000000000195c63                               -      -            
+
+
+#
+# (Tip: To see callchains in a more compact form: perf report -g folded)
+#

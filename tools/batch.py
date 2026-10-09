@@ -58,6 +58,9 @@ CONFIGS = {
     # The same, with atlas uploads recorded inside the frame (Voltra 1aed3ae,
     # Chromi a8dc71f) and Runika 131874b.
     "eco-demo-x11-retained": eco("./build/bench/eco-retained", [], ECO_DEMO_TITLE, resize=True),
+    # After Ocula's fast PNG decode (e4555c2) and Dithra's area rasterizer
+    # (6a45456); see README "After the fast decoders".
+    "eco-demo-x11-fast0": eco("./build/bench/eco-fast0", [], ECO_DEMO_TITLE, resize=True),
     "gpui-demo-x11": gpui(["demo"], "GPUI bench - demo", resize=True),
     "gpui-demo-x11-xim": gpui(["demo"], "GPUI bench - demo", mode="x11-xim", resize=True),
     "gpui-demo-x11-auto": gpui(["demo"], "GPUI bench - demo", update="auto", resize=True),
@@ -70,6 +73,7 @@ for n in (200, 1000, 5000):
     CONFIGS[f"eco-grid{n}-x11-text"] = eco("./build/bench/grid-text", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-partial"] = eco("./build/bench/grid-partial", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-retained"] = eco("./build/bench/grid-retained", [str(n)], f"AMAGE Eco - grid {n}")
+    CONFIGS[f"eco-grid{n}-x11-fast0"] = eco("./build/bench/grid-fast0", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", update="auto")
     CONFIGS[f"gpui-grid{n}-wayland-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", mode="wayland",
