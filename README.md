@@ -768,6 +768,34 @@ What this means for the next steps:
   device could also be opened while the assets load, but the assets now
   take ~20 ms, so this would save little.
 
+## After the store
+
+Voltra 45ee539 writes quads and region texels straight into `Array<U32>`
+(no per-quad word lists); Voltra 4b9b257 adds the store, a vertex buffer
+of quads kept on the GPU between frames, drawn through `C.Spans` runs;
+Chromi af74189 writes each part's quads into the store once and draws
+kept parts from there, instead of copying their cached word lists into
+every frame. Configurations `eco-*-x11-lists` (Voltra 50c0e05, Chromi
+b1a03b0) and `eco-*-x11-store`, 3 sessions each, interleaved; sessions with
+foreign input or a loaded machine were rerun.
+
+| Config | CPU per update, all threads, ms | Main thread, ms | Key-down -> presented, ms (median) |
+| --- | --- | --- | --- |
+| demo, lists | 1.99, 2.02 (3.67 with others at 173%) | 0.66, 0.65 (0.76) | 0.60, 0.60, 0.61 |
+| demo, store | 2.00, 2.03 (2.87 with others at 377%) | 0.64, 0.67 (0.79) | 0.61, 0.62, 0.66 |
+| grid 5000, lists | 1.89, 1.95, 1.91 | 0.536, 0.529, 0.536 | 0.51, 0.53, 0.52 |
+| grid 5000, store | 1.90, 1.89, 1.90 | 0.523, 0.508, 0.513 | 0.50, 0.50, 0.52 |
+
+No gain the sessions can tell apart in the demo; about 20 µs (3-4%) of
+main-thread CPU per update in the grid. The reason is in the logs: these
+updates redraw only parts that do not meet the large ones (the grid's
+partial frames draw 9-22 quads; the 5000 labels are one kept part outside
+the damage), so the per-frame copy the store removes was already small
+there. The store pays where a large kept part meets the damage (a caret
+blinking over a long text) or a whole frame redraws kept parts. Window
+captures of both builds (demo: Tab, Space, Tab, Space; grid 5000) are
+pixel-identical.
+
 ## Where Eco stands, and what to do next
 
 What the numbers show:

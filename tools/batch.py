@@ -61,6 +61,12 @@ CONFIGS = {
     # After Ocula's fast PNG decode (e4555c2) and Dithra's area rasterizer
     # (6a45456); see README "After the fast decoders".
     "eco-demo-x11-fast0": eco("./build/bench/eco-fast0", [], ECO_DEMO_TITLE, resize=True),
+    # Before and after the store (Voltra keeps parts' quads on the GPU;
+    # Chromi stops copying cached quad words into every frame): "lists" is
+    # Voltra 50c0e05 + Chromi b1a03b0, "store" the commits listed in the
+    # README section "After the store".
+    "eco-demo-x11-lists": eco("./build/bench/eco-lists", [], ECO_DEMO_TITLE, resize=True),
+    "eco-demo-x11-store": eco("./build/bench/eco-store", [], ECO_DEMO_TITLE, resize=True),
     "gpui-demo-x11": gpui(["demo"], "GPUI bench - demo", resize=True),
     "gpui-demo-x11-xim": gpui(["demo"], "GPUI bench - demo", mode="x11-xim", resize=True),
     "gpui-demo-x11-auto": gpui(["demo"], "GPUI bench - demo", update="auto", resize=True),
@@ -74,6 +80,8 @@ for n in (200, 1000, 5000):
     CONFIGS[f"eco-grid{n}-x11-partial"] = eco("./build/bench/grid-partial", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-retained"] = eco("./build/bench/grid-retained", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"eco-grid{n}-x11-fast0"] = eco("./build/bench/grid-fast0", [str(n)], f"AMAGE Eco - grid {n}")
+    CONFIGS[f"eco-grid{n}-x11-lists"] = eco("./build/bench/grid-lists", [str(n)], f"AMAGE Eco - grid {n}")
+    CONFIGS[f"eco-grid{n}-x11-store"] = eco("./build/bench/grid-store", [str(n)], f"AMAGE Eco - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}")
     CONFIGS[f"gpui-grid{n}-x11-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", update="auto")
     CONFIGS[f"gpui-grid{n}-wayland-auto"] = gpui(["grid", str(n)], f"GPUI bench - grid {n}", mode="wayland",
